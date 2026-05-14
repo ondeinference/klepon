@@ -1,0 +1,5 @@
+Klepon includes an iPhone app and a companion watchOS app.
+
+The iPhone app is fully usable without preparing the private on-device guide. Private follow-up answers are optional and only appear when the user chooses to enable that guide.
+
+The watchOS app is browse-first and intentionally lightweight. It does not attempt to run the full private answer experience on watchOS.

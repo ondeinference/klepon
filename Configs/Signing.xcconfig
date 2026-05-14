@@ -1,0 +1,12 @@
+// Shared signing settings for the XcodeGen-generated project.
+//
+// Create `Configs/Signing.local.xcconfig` on your machine with:
+//
+// DEVELOPMENT_TEAM = YOURTEAMID
+//
+// This file is git-ignored so you can keep your own Apple Developer team
+// local without committing it.
+
+#include? "Signing.local.xcconfig"
+
+CODE_SIGN_STYLE = Automatic

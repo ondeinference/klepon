@@ -1,0 +1,184 @@
+name: Klepon
+options:
+  deploymentTarget:
+    iOS: "18.5"
+    watchOS: "9.0"
+  xcodeVersion: "26.0"
+  generateEmptyDirectories: false
+  createIntermediateGroups: false
+
+packages:
+  Onde:
+    url: https://github.com/ondeinference/onde-swift
+    exactVersion: 1.0.0
+
+schemes:
+  Klepon:
+    build:
+      targets:
+        Klepon: all
+    run:
+      config: Debug
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+    profile:
+      config: Release
+  Klepon Watch:
+    build:
+      targets:
+        Klepon Watch: all
+    run:
+      config: Debug
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+    profile:
+      config: Release
+
+targets:
+  Klepon:
+    type: application
+    platform: iOS
+    sources:
+      - path: Klepon
+    info:
+      path: Klepon/Info.plist
+      properties:
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneClassName: UIWindowScene
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIUserInterfaceStyle: Light
+    entitlements:
+      path: Klepon/Klepon.entitlements
+      properties:
+        com.apple.developer.kernel.increased-memory-limit: true
+        com.apple.security.application-groups:
+          - group.com.ondeinference.apps
+    configFiles:
+      Debug: Configs/Signing.xcconfig
+      Release: Configs/Signing.xcconfig
+    dependencies:
+      - package: Onde
+        product: Onde
+      - target: Klepon Watch
+    postBuildScripts:
+      - name: Update CFBundleVersion
+        shell: /bin/sh
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+        script: |
+          set -eu
+
+          SHARED_BUNDLE_VERSION_FILE="${BUILD_DIR}/klepon-cfbundleversion.txt"
+          if [ -f "${SHARED_BUNDLE_VERSION_FILE}" ]; then
+            BUNDLE_VERSION="$(cat "${SHARED_BUNDLE_VERSION_FILE}")"
+          else
+            BUNDLE_VERSION="$(date -u +"%Y%m%d.%H%M")"
+            printf '%s' "${BUNDLE_VERSION}" > "${SHARED_BUNDLE_VERSION_FILE}"
+          fi
+
+          INFO_PLIST="${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+
+          if [ ! -f "${INFO_PLIST}" ]; then
+            echo "error: Info.plist not found at ${INFO_PLIST}"
+            exit 1
+          fi
+
+          if ! /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUNDLE_VERSION}" "${INFO_PLIST}" >/dev/null 2>&1; then
+            /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string ${BUNDLE_VERSION}" "${INFO_PLIST}"
+          fi
+
+          echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        TARGETED_DEVICE_FAMILY: 1
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": x86_64
+      configs:
+        Debug:
+          SWIFT_OPTIMIZATION_LEVEL: -Onone
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: -O
+
+  KleponWatch:
+    name: Klepon Watch
+    type: application
+    platform: watchOS
+    sources:
+      - path: KleponWatch
+      - path: Klepon/Domain/GuideEntry.swift
+      - path: Klepon/DesignSystem/KleponColor.swift
+      - path: Klepon/Resources/Content
+        buildPhase: resources
+    configFiles:
+      Debug: Configs/Signing.xcconfig
+      Release: Configs/Signing.xcconfig
+    postBuildScripts:
+      - name: Update CFBundleVersion
+        shell: /bin/sh
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+        script: |
+          set -eu
+
+          SHARED_BUNDLE_VERSION_FILE="${BUILD_DIR}/klepon-cfbundleversion.txt"
+          if [ -f "${SHARED_BUNDLE_VERSION_FILE}" ]; then
+            BUNDLE_VERSION="$(cat "${SHARED_BUNDLE_VERSION_FILE}")"
+          else
+            BUNDLE_VERSION="$(date -u +"%Y%m%d.%H%M")"
+            printf '%s' "${BUNDLE_VERSION}" > "${SHARED_BUNDLE_VERSION_FILE}"
+          fi
+
+          INFO_PLIST="${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+
+          if [ ! -f "${INFO_PLIST}" ]; then
+            echo "error: Info.plist not found at ${INFO_PLIST}"
+            exit 1
+          fi
+
+          if ! /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUNDLE_VERSION}" "${INFO_PLIST}" >/dev/null 2>&1; then
+            /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string ${BUNDLE_VERSION}" "${INFO_PLIST}"
+          fi
+
+          echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.watchkitapp
+        PRODUCT_NAME: Klepon Watch
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: KleponWatch/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        SDKROOT: watchos
+        TARGETED_DEVICE_FAMILY: 4
+        SKIP_INSTALL: YES
+        LD_RUNPATH_SEARCH_PATHS:
+          - "$(inherited)"
+          - "@executable_path/Frameworks"
+        ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: YES
+        "EXCLUDED_ARCHS[sdk=watchsimulator*]": x86_64
+      configs:
+        Debug:
+          SWIFT_OPTIMIZATION_LEVEL: -Onone
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: -O
