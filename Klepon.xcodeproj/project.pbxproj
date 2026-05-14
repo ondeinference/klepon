@@ -96,6 +96,7 @@
 		6235AD6792F25476E2A508F0 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchStore.swift; sourceTree = "<group>"; };
 		67FAA69C42F1845ECB79AC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6B67BCC5A459288FB240C6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6EFBF98118F066D3C7FA14B2 /* KleponWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponWatchApp.swift; sourceTree = "<group>"; };
 		7541983FF7CE190C0663294D /* GuideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
 		7F2850226B4B05FF758C1F93 /* GuideArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideArtworkView.swift; sourceTree = "<group>"; };
@@ -324,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				AF79D8DD27B9CA485140C934 /* Assets.xcassets */,
+				6B67BCC5A459288FB240C6E7 /* Info.plist */,
 				A4400AB0AB8D245325A00BA3 /* Klepon.entitlements */,
 				82A3750644C21DE5F301405D /* AI */,
 				7FFF66D137216AB43C7376AF /* App */,
@@ -642,14 +644,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = (
-					UIInterfaceOrientationPortrait,
-				);
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_FILE = Klepon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,14 +757,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = (
-					UIInterfaceOrientationPortrait,
-				);
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_FILE = Klepon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
