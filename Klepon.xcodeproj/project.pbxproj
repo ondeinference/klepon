@@ -11,6 +11,7 @@
 		03D16A2386EB68FED8D92D52 /* GuideEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A0935AE4B398B281758834 /* GuideEntry.swift */; };
 		05BF0404B7030EDCD3D8C357 /* GuideArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2850226B4B05FF758C1F93 /* GuideArtworkView.swift */; };
 		0977CD6BFFDBDBE3B7795924 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FDDB0F88FF430ABD679AD89 /* collections.json */; };
+		0CE2632DF6FB02163D55BB65 /* Klepon Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9E76510CC840CE068B0FC381 /* Klepon Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D685E35EE50C926DC6FBE4C /* KleponChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C4F3C8688072191AA16C6 /* KleponChip.swift */; };
 		0E69E79C5FADF1633FE3D63F /* KleponColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */; };
 		14B7CE6E6A0EB12B709F7B55 /* KleponTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD520C870387E82E9A1533C2 /* KleponTypography.swift */; };
@@ -52,10 +53,35 @@
 		FD0E1BA888E3CE73875D58FF /* RecentSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D55C73775065842DC4A51797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A5707BDA883282DEB132FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8CEBF52617721AEE450A7CF;
+			remoteInfo = "Klepon Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F3457485B5B2DC81D4FAA704 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0CE2632DF6FB02163D55BB65 /* Klepon Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		054656155630B064F785B0D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BC0C4C22A5134DB058E41F4 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		13418896CA28250CEEE7592E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		13B09D700AA047E07E91F6A2 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		1FDDB0F88FF430ABD679AD89 /* collections.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = collections.json; sourceTree = "<group>"; };
 		217E7D4050D471955FF3AB13 /* WatchBrandSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBrandSystem.swift; sourceTree = "<group>"; };
 		248F359109A08A60F792C42D /* guide_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = guide_entries.json; sourceTree = "<group>"; };
@@ -66,7 +92,7 @@
 		4C77AF5EB4B17D087FA522F6 /* WatchContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentLoader.swift; sourceTree = "<group>"; };
 		52DD909BB2EF68103CB46EDA /* KleponActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponActionButton.swift; sourceTree = "<group>"; };
 		5AF291E9C2E66209377138E6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		5DE91827A635C0B0B72690EC /* Klepon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klepon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE91827A635C0B0B72690EC /* Klepon.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Klepon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6235AD6792F25476E2A508F0 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchStore.swift; sourceTree = "<group>"; };
 		67FAA69C42F1845ECB79AC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +135,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038E8FA398B5CB76373031FD /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				13B09D700AA047E07E91F6A2 /* Signing.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		1F8B5D6327376068DBCA9694 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +313,7 @@
 		D9EBF621A6F1A1729FE26516 = {
 			isa = PBXGroup;
 			children = (
+				038E8FA398B5CB76373031FD /* Configs */,
 				EA4DFA44FE8BB01979ADB187 /* Klepon */,
 				472BF5D47BEE4AF1EC80B645 /* KleponWatch */,
 				3F9369D339C14126AB44D720 /* Products */,
@@ -311,11 +346,13 @@
 				142193A63A26ACC180E1EB37 /* Sources */,
 				BC5A6BBAFB4A1B61000065D1 /* Resources */,
 				F72797E506E8FA89264A5C68 /* Frameworks */,
+				F3457485B5B2DC81D4FAA704 /* Embed Watch Content */,
 				005255530CCC905544DBE9A8 /* Update CFBundleVersion */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6D8B1489B7EFEE9D18830BD6 /* PBXTargetDependency */,
 			);
 			name = Klepon;
 			packageProductDependencies = (
@@ -352,6 +389,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					2ADB11F6C1D51B9F9A9DB15F = {
+						ProvisioningStyle = Automatic;
+					};
+					E8CEBF52617721AEE450A7CF = {
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 8911E6C6F25C3A4F99870749 /* Build configuration list for PBXProject "Klepon" */;
 			developmentRegion = en;
@@ -417,7 +462,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -eu\n\nBUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
+			shellScript = "set -eu\n\nSHARED_BUNDLE_VERSION_FILE=\"${BUILD_DIR}/klepon-cfbundleversion.txt\"\nif [ -f \"${SHARED_BUNDLE_VERSION_FILE}\" ]; then\n  BUNDLE_VERSION=\"$(cat \"${SHARED_BUNDLE_VERSION_FILE}\")\"\nelse\n  BUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\n  printf '%s' \"${BUNDLE_VERSION}\" > \"${SHARED_BUNDLE_VERSION_FILE}\"\nfi\n\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4CD2E0A71BF112F74656BFFD /* Update CFBundleVersion */ = {
@@ -437,7 +482,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -eu\n\nBUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
+			shellScript = "set -eu\n\nSHARED_BUNDLE_VERSION_FILE=\"${BUILD_DIR}/klepon-cfbundleversion.txt\"\nif [ -f \"${SHARED_BUNDLE_VERSION_FILE}\" ]; then\n  BUNDLE_VERSION=\"$(cat \"${SHARED_BUNDLE_VERSION_FILE}\")\"\nelse\n  BUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\n  printf '%s' \"${BUNDLE_VERSION}\" > \"${SHARED_BUNDLE_VERSION_FILE}\"\nfi\n\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -495,15 +540,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6D8B1489B7EFEE9D18830BD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8CEBF52617721AEE450A7CF /* Klepon Watch */;
+			targetProxy = D55C73775065842DC4A51797 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		57B34C7365523CA3F80ED770 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KleponWatch/Info.plist;
@@ -579,18 +633,20 @@
 		};
 		97B8585F2E74C6C870509FE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Klepon/Klepon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2TQF86ZACD;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = (
+					UIInterfaceOrientationPortrait,
+				);
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,13 +662,13 @@
 		};
 		A3B469B57456DA7C46537A7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2TQF86ZACD;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KleponWatch/Info.plist;
@@ -695,17 +751,20 @@
 		};
 		D2D1439E7A622A6F8019887F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Klepon/Klepon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = (
+					UIInterfaceOrientationPortrait,
+				);
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
