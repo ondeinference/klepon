@@ -49,6 +49,27 @@ targets:
     dependencies:
       - package: Onde
         product: Onde
+    postBuildScripts:
+      - name: Update CFBundleVersion
+        shell: /bin/sh
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+        script: |
+          set -eu
+
+          BUNDLE_VERSION="$(date -u +"%Y%m%d.%H%M")"
+          INFO_PLIST="${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+
+          if [ ! -f "${INFO_PLIST}" ]; then
+            echo "error: Info.plist not found at ${INFO_PLIST}"
+            exit 1
+          fi
+
+          if ! /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUNDLE_VERSION}" "${INFO_PLIST}" >/dev/null 2>&1; then
+            /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string ${BUNDLE_VERSION}" "${INFO_PLIST}"
+          fi
+
+          echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
@@ -59,7 +80,10 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UIUserInterfaceStyle: Light
+        INFOPLIST_KEY_UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
         ENABLE_USER_SCRIPT_SANDBOXING: YES
+        TARGETED_DEVICE_FAMILY: 1
         "EXCLUDED_ARCHS[sdk=iphonesimulator*]": x86_64
       configs:
         Debug:
@@ -74,8 +98,30 @@ targets:
     sources:
       - path: KleponWatch
       - path: Klepon/Domain/GuideEntry.swift
+      - path: Klepon/DesignSystem/KleponColor.swift
       - path: Klepon/Resources/Content
         buildPhase: resources
+    postBuildScripts:
+      - name: Update CFBundleVersion
+        shell: /bin/sh
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+        script: |
+          set -eu
+
+          BUNDLE_VERSION="$(date -u +"%Y%m%d.%H%M")"
+          INFO_PLIST="${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+
+          if [ ! -f "${INFO_PLIST}" ]; then
+            echo "error: Info.plist not found at ${INFO_PLIST}"
+            exit 1
+          fi
+
+          if ! /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUNDLE_VERSION}" "${INFO_PLIST}" >/dev/null 2>&1; then
+            /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string ${BUNDLE_VERSION}" "${INFO_PLIST}"
+          fi
+
+          echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.watchkitapp

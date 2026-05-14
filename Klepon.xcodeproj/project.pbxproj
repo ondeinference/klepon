@@ -42,9 +42,11 @@
 		B1F1D1A453150D3BBB0146EF /* RecentlyViewedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45070309D2C7058BAA44CD2 /* RecentlyViewedStore.swift */; };
 		B34377720179454F9B9184C5 /* OndeGuideEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D53A5F9D5897E15506C20 /* OndeGuideEngine.swift */; };
 		B7DE9EC8BE998E6719C88E83 /* guide_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = 248F359109A08A60F792C42D /* guide_entries.json */; };
+		C2EA2682A6545802C06E00CC /* WatchBrandSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E7D4050D471955FF3AB13 /* WatchBrandSystem.swift */; };
 		C709C82E7F0BCF398BCD9C2F /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2891A1AFBB59928FC5B1E66 /* ContentRepository.swift */; };
 		D99AAE1CDE51139840A52607 /* KleponMetadataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1C50BFBE2EF5F37941590 /* KleponMetadataRow.swift */; };
 		DA915BA8B2F732E7D62CF936 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B5E3D9A1906C2FED3032 /* EmptyStateView.swift */; };
+		E45F257E3D35DC565B21B299 /* KleponColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */; };
 		F1431179B54CEB23FFFCB2AE /* KleponApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE2A1E73EB15970A17A894 /* KleponApp.swift */; };
 		FA423A76BE098A9911044246 /* AskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6E7DC56DD8E1459EFC892 /* AskSheetView.swift */; };
 		FD0E1BA888E3CE73875D58FF /* RecentSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */; };
@@ -55,6 +57,7 @@
 		0BC0C4C22A5134DB058E41F4 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		13418896CA28250CEEE7592E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1FDDB0F88FF430ABD679AD89 /* collections.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = collections.json; sourceTree = "<group>"; };
+		217E7D4050D471955FF3AB13 /* WatchBrandSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBrandSystem.swift; sourceTree = "<group>"; };
 		248F359109A08A60F792C42D /* guide_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = guide_entries.json; sourceTree = "<group>"; };
 		2B499D3BF7AC80D31907D87F /* OndeEnvironmentBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OndeEnvironmentBootstrap.swift; sourceTree = "<group>"; };
 		3719031080B59898133810F7 /* GuideAnswerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideAnswerService.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 				054656155630B064F785B0D7 /* Assets.xcassets */,
 				67FAA69C42F1845ECB79AC16 /* Info.plist */,
 				6EFBF98118F066D3C7FA14B2 /* KleponWatchApp.swift */,
+				217E7D4050D471955FF3AB13 /* WatchBrandSystem.swift */,
 				4C77AF5EB4B17D087FA522F6 /* WatchContentLoader.swift */,
 				EDBB4F5D4C98D036AC52E193 /* WatchHomeView.swift */,
 			);
@@ -307,6 +311,7 @@
 				142193A63A26ACC180E1EB37 /* Sources */,
 				BC5A6BBAFB4A1B61000065D1 /* Resources */,
 				F72797E506E8FA89264A5C68 /* Frameworks */,
+				005255530CCC905544DBE9A8 /* Update CFBundleVersion */,
 			);
 			buildRules = (
 			);
@@ -326,6 +331,7 @@
 			buildPhases = (
 				57F190B6EB353A926A214B19 /* Sources */,
 				0DEE2337CA5E6D48C9C110A2 /* Resources */,
+				4CD2E0A71BF112F74656BFFD /* Update CFBundleVersion */,
 			);
 			buildRules = (
 			);
@@ -393,6 +399,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		005255530CCC905544DBE9A8 /* Update CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update CFBundleVersion";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\nBUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CD2E0A71BF112F74656BFFD /* Update CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update CFBundleVersion";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\nBUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		142193A63A26ACC180E1EB37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -436,7 +485,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D16A2386EB68FED8D92D52 /* GuideEntry.swift in Sources */,
+				E45F257E3D35DC565B21B299 /* KleponColor.swift in Sources */,
 				36AA193A3B7EF7CB25B6E0BE /* KleponWatchApp.swift in Sources */,
+				C2EA2682A6545802C06E00CC /* WatchBrandSystem.swift in Sources */,
 				1E7AAEA8007BFE4ED6FE4892 /* WatchContentLoader.swift in Sources */,
 				4D63E231AC9630B2C225DF22 /* WatchHomeView.swift in Sources */,
 			);
@@ -539,16 +590,17 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -559,6 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2TQF86ZACD;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -648,21 +701,21 @@
 				CODE_SIGN_ENTITLEMENTS = Klepon/Klepon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2TQF86ZACD;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};

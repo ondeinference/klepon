@@ -4,13 +4,13 @@ private struct WatchGuideStore {
     let entries: [GuideEntry] = WatchContentLoader().loadEntries()
 
     var featuredEntries: [GuideEntry] {
-        Array(entries.filter(\.isFeatured).prefix(4))
+        Array(entries.filter(\.isFeatured).prefix(3))
     }
 
     var browseEntries: [GuideEntry] {
         let featuredIDs = Set(featuredEntries.map(\.id))
         let remaining = entries.filter { !featuredIDs.contains($0.id) }
-        return Array((featuredEntries + remaining).prefix(8))
+        return Array((featuredEntries + remaining).prefix(6))
     }
 }
 
@@ -19,144 +19,232 @@ struct WatchHomeView: View {
 
     var body: some View {
         NavigationStack {
-            if store.entries.isEmpty {
-                ScrollView {
-                    VStack(spacing: 10) {
-                        Image(systemName: "fork.knife.circle")
-                            .font(.title2)
-                            .foregroundStyle(.secondary)
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 14) {
+                    introCard
 
-                        Text("Guide unavailable")
-                            .font(.headline)
+                    if store.entries.isEmpty {
+                        emptyStateCard
+                    } else {
+                        if !store.featuredEntries.isEmpty {
+                            WatchKleponSectionHeader(
+                                "Start here",
+                                subtitle: "A warm first taste of the guide"
+                            )
 
-                        Text(
-                            "Open Klepon on iPhone first if you want the fuller guide and private follow-up answers."
-                        )
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                    }
-                    .padding()
-                }
-                .navigationTitle("Klepon")
-            } else {
-                List {
-                    if !store.featuredEntries.isEmpty {
-                        Section("Start here") {
                             ForEach(store.featuredEntries) { entry in
                                 NavigationLink {
                                     WatchEntryDetailView(entry: entry)
                                 } label: {
-                                    EntryRow(entry: entry)
+                                    WatchEntryCard(entry: entry)
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
-                    }
 
-                    Section("Browse") {
+                        WatchKleponSectionHeader(
+                            "Browse",
+                            subtitle: "A few essentials that feel good on the wrist"
+                        )
+
                         ForEach(store.browseEntries) { entry in
                             NavigationLink {
                                 WatchEntryDetailView(entry: entry)
                             } label: {
-                                EntryRow(entry: entry)
+                                WatchEntryCard(entry: entry)
                             }
+                            .buttonStyle(.plain)
                         }
-                    }
 
-                    Section {
-                        Text(
-                            "Browse on watch. Use the iPhone app for the full guide and private follow-up answers."
+                        WatchKleponFooterCard(
+                            message:
+                                "Browse on watch. Use the iPhone app for the fuller guide and private follow-up answers."
                         )
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
                     }
                 }
-                .navigationTitle("Klepon")
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
+            }
+            .background(KleponColor.background.ignoresSafeArea())
+            .navigationTitle("Klepon")
+        }
+    }
+
+    private var introCard: some View {
+        WatchKleponCard(padding: 16) {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Taste of Indonesia")
+                    .font(WatchKleponTypography.heroTitle)
+                    .foregroundStyle(KleponColor.textPrimary)
+
+                Text(
+                    "A calmer way to browse dishes, flavors, and food traditions from your wrist."
+                )
+                .font(WatchKleponTypography.body)
+                .foregroundStyle(KleponColor.textSecondary)
+                .lineSpacing(2)
+
+                HStack(spacing: 8) {
+                    WatchKleponChip(title: "Curated")
+                    WatchKleponChip(title: "Private", icon: "lock.fill")
+                }
+            }
+        }
+    }
+
+    private var emptyStateCard: some View {
+        WatchKleponCard {
+            VStack(alignment: .leading, spacing: 10) {
+                Image(systemName: "fork.knife.circle.fill")
+                    .font(.system(size: 22, weight: .semibold))
+                    .foregroundStyle(KleponColor.accent)
+
+                Text("Guide unavailable")
+                    .font(WatchKleponTypography.cardTitle)
+                    .foregroundStyle(KleponColor.textPrimary)
+
+                Text(
+                    "Open Klepon on iPhone first if you want the fuller guide and private follow-up answers."
+                )
+                .font(WatchKleponTypography.bodySecondary)
+                .foregroundStyle(KleponColor.textSecondary)
+                .lineSpacing(2)
             }
         }
     }
 }
 
-private struct EntryRow: View {
+private struct WatchEntryCard: View {
     let entry: GuideEntry
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(entry.title)
-                .font(.headline)
+        WatchKleponCard {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(alignment: .top, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(entry.title)
+                            .font(WatchKleponTypography.cardTitle)
+                            .foregroundStyle(KleponColor.textPrimary)
+                            .lineLimit(2)
 
-            Text(entry.subtitle)
-                .font(.footnote)
-                .foregroundStyle(.secondary)
-                .lineLimit(2)
+                        Text(entry.subtitle)
+                            .font(WatchKleponTypography.bodySecondary)
+                            .foregroundStyle(KleponColor.textSecondary)
+                            .lineLimit(2)
+                    }
+
+                    Spacer(minLength: 0)
+
+                    Image(systemName: entry.kind.symbolName)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(KleponColor.accentWarm)
+                        .padding(8)
+                        .background(Circle().fill(KleponColor.surfaceSecondary))
+                }
+
+                HStack(spacing: 8) {
+                    WatchKleponChip(title: entry.kind.displayTitle, icon: entry.kind.symbolName)
+
+                    if let region = entry.region {
+                        Text(region)
+                            .font(WatchKleponTypography.caption)
+                            .foregroundStyle(KleponColor.accentWarm)
+                            .lineLimit(1)
+                    }
+                }
+            }
         }
-        .padding(.vertical, 2)
     }
 }
 
 private struct WatchEntryDetailView: View {
     let entry: GuideEntry
 
+    private var tasteItems: [String] {
+        Array(entry.tasteNotes.prefix(4))
+    }
+
+    private var highlightItems: [String] {
+        Array(entry.highlights.prefix(4))
+    }
+
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(entry.title)
-                    .font(.headline)
+            LazyVStack(alignment: .leading, spacing: 12) {
+                WatchKleponCard(padding: 16) {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(entry.title)
+                            .font(WatchKleponTypography.heroTitle)
+                            .foregroundStyle(KleponColor.textPrimary)
 
-                Text(entry.subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                        Text(entry.subtitle)
+                            .font(WatchKleponTypography.body)
+                            .foregroundStyle(KleponColor.textSecondary)
+                            .lineSpacing(2)
 
-                if let region = entry.region {
-                    Text(region)
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
+                        HStack(spacing: 8) {
+                            WatchKleponChip(
+                                title: entry.kind.displayTitle,
+                                icon: entry.kind.symbolName
+                            )
 
-                Divider()
-
-                Text(entry.summary)
-                    .font(.footnote)
-
-                if !entry.tasteNotes.isEmpty {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Taste")
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary)
-
-                        ForEach(Array(entry.tasteNotes.prefix(3)), id: \.self) { note in
-                            Text("• \(note)")
-                                .font(.footnote)
+                            if let region = entry.region {
+                                Text(region)
+                                    .font(WatchKleponTypography.caption)
+                                    .foregroundStyle(KleponColor.accentWarm)
+                                    .lineLimit(1)
+                            }
                         }
                     }
                 }
 
-                if !entry.highlights.isEmpty {
-                    Divider()
+                WatchKleponCard {
+                    Text(entry.summary)
+                        .font(WatchKleponTypography.body)
+                        .foregroundStyle(KleponColor.textSecondary)
+                        .lineSpacing(2)
+                }
 
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Quick notes")
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary)
-
-                        ForEach(Array(entry.highlights.prefix(3)), id: \.self) { note in
-                            Text("• \(note)")
-                                .font(.footnote)
+                if !tasteItems.isEmpty {
+                    WatchKleponCard {
+                        VStack(alignment: .leading, spacing: 10) {
+                            WatchKleponSectionHeader("Taste")
+                            WatchKleponChipGrid(items: tasteItems)
                         }
                     }
                 }
 
-                Divider()
+                if !highlightItems.isEmpty {
+                    WatchKleponCard {
+                        VStack(alignment: .leading, spacing: 10) {
+                            WatchKleponSectionHeader("Quick notes")
 
-                Text(
-                    "Open Klepon on iPhone if you want the fuller guide and on-device follow-up answers."
+                            ForEach(highlightItems, id: \.self) { note in
+                                HStack(alignment: .top, spacing: 8) {
+                                    Circle()
+                                        .fill(KleponColor.accentWarm)
+                                        .frame(width: 5, height: 5)
+                                        .padding(.top, 5)
+
+                                    Text(note)
+                                        .font(WatchKleponTypography.bodySecondary)
+                                        .foregroundStyle(KleponColor.textSecondary)
+                                        .lineSpacing(2)
+                                }
+                            }
+                        }
+                    }
+                }
+
+                WatchKleponFooterCard(
+                    message:
+                        "Open Klepon on iPhone if you want the fuller guide and on-device follow-up answers."
                 )
-                .font(.footnote)
-                .foregroundStyle(.secondary)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
         }
+        .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle(entry.title)
     }
 }
