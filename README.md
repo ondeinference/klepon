@@ -1,5 +1,7 @@
 # Klepon: Taste of Indonesia
 
+[![Join the Klepon TestFlight](https://img.shields.io/badge/TestFlight-Join%20beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/CRRpT6a5)
+
 Klepon is an iPhone-first SwiftUI app for exploring Indonesian dishes, ingredients, and food traditions. The app is built to feel warm, simple, and curated rather than like a generic chatbot or a giant food database.
 
 ## Why this project exists
