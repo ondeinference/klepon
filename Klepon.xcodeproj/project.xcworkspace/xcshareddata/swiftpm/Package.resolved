@@ -1,0 +1,15 @@
+{
+  "originHash" : "c082d58172ce2493986244137cece2181a09f6e7ac51fc87cffba6270d7d243a",
+  "pins" : [
+    {
+      "identity" : "onde-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ondeinference/onde-swift",
+      "state" : {
+        "revision" : "c3114996521c9aee2aa0bc71b7324a8713376103",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -1,0 +1,89 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Xcode user state
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+# Xcode build artifacts
+build/
+DerivedData/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.xcresult
+*.hmap
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+# Keep Package.resolved committed for reproducible app builds.
+
+# CocoaPods / Carthage (if ever used)
+Pods/
+Carthage/Build/
+Carthage/Checkouts/
+
+# Python utility scripts
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+*.xcconfig.local
+*.secret
+Secrets/
+secrets/
+
+# Signing, keys, and credentials
+*.mobileprovision
+*.provisionprofile
+*.p8
+*.p12
+*.pem
+*.key
+*.cer
+*.crt
+*.csr
+AuthKey_*.p8
+
+# App packaging / archives
+*.xcarchive
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Crash reporting
+crashlytics-build.properties
+crashlytics.properties
+fabric.properties
+
+# Code Injection / Playgrounds
+iOSInjectionProject/
+timeline.xctimeline
+playground.xcworkspace

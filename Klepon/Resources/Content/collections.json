@@ -1,0 +1,59 @@
+[
+  {
+    "id": "start-here",
+    "title": "Start here",
+    "subtitle": "Friendly first dishes for a warm introduction",
+    "entryIDs": ["nasi-goreng", "sate", "gado-gado", "klepon", "bakso"]
+  },
+  {
+    "id": "street-side-favorites",
+    "title": "Street-side favorites",
+    "subtitle": "Fast, fragrant, and full of personality",
+    "entryIDs": [
+      "street-food",
+      "nasi-goreng",
+      "sate",
+      "pempek",
+      "martabak-manis",
+      "martabak-telur",
+      "bakso"
+    ]
+  },
+  {
+    "id": "bold-and-savory",
+    "title": "Bold and savory",
+    "subtitle": "Richer dishes and the flavors that sharpen them",
+    "entryIDs": [
+      "rendang",
+      "rawon",
+      "soto-ayam",
+      "sambal",
+      "kecap-manis",
+      "ayam-penyet"
+    ]
+  },
+  {
+    "id": "sweet-and-comforting",
+    "title": "Sweet and comforting",
+    "subtitle": "Palm sugar, coconut, and softer textures",
+    "entryIDs": [
+      "klepon",
+      "martabak-manis",
+      "festive-feasts",
+      "coconut-milk",
+      "gudeg"
+    ]
+  },
+  {
+    "id": "breakfast-and-comfort",
+    "title": "Breakfast and comfort",
+    "subtitle": "Gentler dishes that still feel layered and local",
+    "entryIDs": ["bubur-ayam", "soto-ayam", "bakso", "tempeh"]
+  },
+  {
+    "id": "regional-icons",
+    "title": "Regional icons",
+    "subtitle": "A few flavors strongly tied to place",
+    "entryIDs": ["rendang", "pempek", "gudeg", "rawon", "gado-gado"]
+  }
+]

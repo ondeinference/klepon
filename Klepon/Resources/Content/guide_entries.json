@@ -1,0 +1,502 @@
+[
+  {
+    "id": "klepon",
+    "kind": "dish",
+    "title": "Klepon",
+    "subtitle": "Sweet rice cake with palm sugar and coconut",
+    "summary": "A small glutinous rice cake filled with melted palm sugar and rolled in fresh coconut.",
+    "story": "Klepon is one of the most recognizable Indonesian sweet bites: soft, chewy, grassy-green from pandan or suji, and surprising when the warm palm sugar center spills out. It feels comforting, familiar, and often a little playful to eat.",
+    "tasteNotes": ["chewy", "sweet", "coconut", "palm sugar"],
+    "highlights": [
+      "Best eaten in one bite so the molten center does not spill everywhere",
+      "Often grouped with market snacks known as kue basah",
+      "Fresh coconut makes the texture feel soft rather than dry"
+    ],
+    "region": "Common across Java and beyond",
+    "aliases": ["onde-onde kecil", "pandan rice cake"],
+    "tags": ["dessert", "snack", "market snack", "pandan"],
+    "relatedIDs": ["festive-feasts", "coconut-milk", "martabak-manis"],
+    "suggestedQuestions": [
+      "What does klepon taste like?",
+      "Is klepon always green?",
+      "When do people usually eat klepon?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "rendang",
+    "kind": "dish",
+    "title": "Rendang",
+    "subtitle": "Slow-cooked beef in a rich spiced coconut base",
+    "summary": "A deeply savory beef dish cooked slowly with coconut milk, chilies, and aromatics until concentrated and dark.",
+    "story": "Rendang is closely associated with Minangkabau cooking from West Sumatra. It is known for patience and depth: the sauce cooks down gradually until the spices cling tightly to the meat, creating a dish that feels intense, celebratory, and layered rather than simply hot.",
+    "tasteNotes": ["savory", "spiced", "rich", "deeply aromatic"],
+    "highlights": [
+      "The flavor comes from reduction and time, not just chili heat",
+      "Texture and moisture can vary from saucier to quite dry",
+      "Often seen at festive meals and special gatherings"
+    ],
+    "region": "West Sumatra and Minangkabau cuisine",
+    "aliases": ["beef rendang"],
+    "tags": ["beef", "coconut milk", "celebration", "sumatra"],
+    "relatedIDs": ["sambal", "festive-feasts", "rawon", "coconut-milk"],
+    "suggestedQuestions": [
+      "Is rendang always spicy?",
+      "Why is rendang so dark and rich?",
+      "What should I try if I like rendang?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "nasi-goreng",
+    "kind": "dish",
+    "title": "Nasi goreng",
+    "subtitle": "Indonesia’s beloved fried rice",
+    "summary": "A savory fried rice dish usually built from rice, aromatics, sweet soy sauce, and whatever proteins or vegetables are on hand.",
+    "story": "Nasi goreng is one of the most approachable Indonesian dishes because it feels familiar while still tasting distinctively local. Kecap manis often gives it a darker color and round sweetness, while toppings like egg, crackers, pickles, or sambal shape the final experience.",
+    "tasteNotes": ["savory", "smoky", "slightly sweet", "comforting"],
+    "highlights": [
+      "A plate can feel homey or street-side depending on style",
+      "Sweet soy sauce often gives the dish its signature depth",
+      "Commonly served with fried egg, crackers, or sambal"
+    ],
+    "region": "Popular across Indonesia",
+    "aliases": ["fried rice indonesia"],
+    "tags": ["rice", "street food", "comfort food", "quick meal"],
+    "relatedIDs": ["kecap-manis", "sambal", "street-food", "bakso"],
+    "suggestedQuestions": [
+      "What makes nasi goreng different from other fried rice?",
+      "Is nasi goreng sweet or savory?",
+      "What is usually served with nasi goreng?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "gado-gado",
+    "kind": "dish",
+    "title": "Gado-gado",
+    "subtitle": "Mixed vegetables with peanut sauce",
+    "summary": "A composed dish of vegetables, tofu, tempeh, egg, and crackers dressed in a rich peanut sauce.",
+    "story": "Gado-gado can look simple at first, but the balance matters: crisp and soft textures, blanched and raw elements, and a peanut sauce that can lean sweet, savory, or spicy depending on the maker. It is often one of the easiest dishes for newcomers to enjoy immediately.",
+    "tasteNotes": ["nutty", "savory", "fresh", "slightly sweet"],
+    "highlights": [
+      "Peanut sauce texture and sweetness vary widely",
+      "Tofu, tempeh, egg, and lontong often make it filling enough for a full meal",
+      "Crackers add crunch and contrast"
+    ],
+    "region": "Common in Java, with many local styles",
+    "aliases": ["indonesian salad"],
+    "tags": ["vegetables", "peanut sauce", "tofu", "tempeh"],
+    "relatedIDs": ["tempeh", "sambal", "street-food", "coconut-milk"],
+    "suggestedQuestions": [
+      "Is gado-gado vegetarian?",
+      "What does gado-gado sauce taste like?",
+      "How is gado-gado different from pecel?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "sate",
+    "kind": "dish",
+    "title": "Sate",
+    "subtitle": "Skewered grilled meat with bold sauces",
+    "summary": "Small skewers of grilled meat, often served with peanut sauce, sweet soy, rice cakes, or sambal.",
+    "story": "Sate is one of the most recognizable Indonesian street and dinner dishes. The details change by region and type of meat, but the core appeal is easy to understand: smoke from the grill, concentrated seasoning, and a dipping sauce that can tilt nutty, sweet, savory, or spicy.",
+    "tasteNotes": ["smoky", "savory", "charred", "nutty"],
+    "highlights": [
+      "Different regions have distinct satay styles and sauces",
+      "Peanut sauce is common but not universal",
+      "Often served with rice cake, sliced shallots, and chili"
+    ],
+    "region": "Found across Indonesia with many local styles",
+    "aliases": ["satay"],
+    "tags": ["grilled", "street food", "skewers", "peanut sauce"],
+    "relatedIDs": ["kecap-manis", "sambal", "street-food", "ayam-penyet"],
+    "suggestedQuestions": [
+      "What sauce usually comes with sate?",
+      "What makes Indonesian sate special?",
+      "What should I try with sate?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "soto-ayam",
+    "kind": "dish",
+    "title": "Soto ayam",
+    "subtitle": "Comforting chicken soup with bright aromatics",
+    "summary": "A fragrant chicken soup built with turmeric, aromatics, noodles or rice, and assorted toppings.",
+    "story": "Soto ayam is one of those dishes that feels generous and restorative. It can be light and clear or a little richer depending on the style, but it usually carries a bright yellow tone from turmeric and a layered aroma from herbs, lime, fried shallots, and broth.",
+    "tasteNotes": ["brothy", "fragrant", "comforting", "bright"],
+    "highlights": [
+      "Usually finished with toppings added at the table",
+      "Texture depends on whether it is served with rice, noodles, or both",
+      "Lime and sambal let people tune the final flavor"
+    ],
+    "region": "Popular across Indonesia with many variations",
+    "aliases": ["indonesian chicken soup"],
+    "tags": ["soup", "turmeric", "comfort food", "chicken"],
+    "relatedIDs": ["sambal", "street-food", "bubur-ayam"],
+    "suggestedQuestions": [
+      "Is soto ayam spicy?",
+      "What is usually inside soto ayam?",
+      "When do people eat soto ayam?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "pempek",
+    "kind": "dish",
+    "title": "Pempek",
+    "subtitle": "Chewy fish cakes with sweet-sour cuko sauce",
+    "summary": "A fish-based cake or dumpling, usually served with a dark, tangy, spicy cuko sauce.",
+    "story": "Pempek is strongly associated with Palembang in South Sumatra. Its appeal comes from contrast: chewy fish cakes, crisp fried edges on some styles, and a bold sauce that mixes sweetness, sourness, and chili heat in a way that feels sharp and memorable.",
+    "tasteNotes": ["chewy", "savory", "tangy", "sweet-sour"],
+    "highlights": [
+      "Cuko sauce is a big part of the identity of the dish",
+      "There are many shapes and fillings, including egg-filled versions",
+      "Texture matters as much as flavor"
+    ],
+    "region": "Palembang, South Sumatra",
+    "aliases": ["palembang fish cake"],
+    "tags": ["fish", "street food", "south sumatra", "snack"],
+    "relatedIDs": ["street-food", "sambal", "rawon"],
+    "suggestedQuestions": [
+      "What does pempek sauce taste like?",
+      "Is pempek more like a snack or a meal?",
+      "What makes pempek different from fish balls?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "bakso",
+    "kind": "dish",
+    "title": "Bakso",
+    "subtitle": "Meatball soup that feels deeply everyday",
+    "summary": "A popular Indonesian meatball soup with springy meatballs, clear broth, noodles, and customizable toppings.",
+    "story": "Bakso is one of those dishes that feels instantly familiar yet distinctly local. The broth is usually straightforward and comforting, while the texture of the meatballs matters a lot: springy, bouncy, and satisfying in a way that makes the whole bowl feel casual and dependable.",
+    "tasteNotes": ["brothy", "savory", "springy", "comforting"],
+    "highlights": [
+      "Texture is central to the appeal of bakso",
+      "Vendors and stalls often offer lots of topping variations",
+      "A bowl can feel like a snack, lunch, or late-day comfort meal"
+    ],
+    "region": "Found across Indonesia",
+    "aliases": ["indonesian meatball soup"],
+    "tags": ["soup", "meatballs", "street food", "comfort"],
+    "relatedIDs": ["soto-ayam", "street-food", "bubur-ayam"],
+    "suggestedQuestions": [
+      "What is bakso like to eat?",
+      "Why do people love bakso so much?",
+      "Is bakso more of a snack or a full meal?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "gudeg",
+    "kind": "dish",
+    "title": "Gudeg",
+    "subtitle": "Young jackfruit stew with sweet, savory depth",
+    "summary": "A slow-cooked young jackfruit dish often associated with Yogyakarta, usually served with rice and savory side dishes.",
+    "story": "Gudeg surprises many first-time eaters because its sweetness is more pronounced than they expect from a main dish. The jackfruit cooks down into a soft, fibrous texture, while the full plate around it usually adds contrast through eggs, sambal, or richer savory components.",
+    "tasteNotes": ["sweet-savory", "soft", "rich", "aromatic"],
+    "highlights": [
+      "Often understood best as part of a full plate rather than by itself",
+      "The sweetness is part of the identity, not an accident",
+      "Texture is tender and stewed rather than crisp or sharp"
+    ],
+    "region": "Yogyakarta and Central Java",
+    "aliases": ["jackfruit stew"],
+    "tags": ["jackfruit", "java", "stewed", "sweet-savory"],
+    "relatedIDs": ["festive-feasts", "tempeh", "coconut-milk"],
+    "suggestedQuestions": [
+      "Why is gudeg sweet?",
+      "What is usually served with gudeg?",
+      "Would I like gudeg if I usually prefer savory food?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "rawon",
+    "kind": "dish",
+    "title": "Rawon",
+    "subtitle": "Dark beef soup with earthy depth",
+    "summary": "A blackish beef soup known for its deep color and earthy richness, especially associated with East Java.",
+    "story": "Rawon stands out immediately because of its color, which comes from keluak. The bowl often feels lighter than it looks at first glance, but the flavor is unmistakably deep, earthy, and savory. It is the kind of dish that feels serious without being heavy in a creamy way.",
+    "tasteNotes": ["earthy", "savory", "deep", "brothy"],
+    "highlights": [
+      "Its dark color is one of the most recognizable parts of the dish",
+      "The broth is rich in flavor but still soup-like and drinkable",
+      "Often served with rice and small accompaniments for contrast"
+    ],
+    "region": "East Java",
+    "aliases": ["black beef soup"],
+    "tags": ["beef", "soup", "east java", "keluak"],
+    "relatedIDs": ["rendang", "soto-ayam", "street-food"],
+    "suggestedQuestions": [
+      "Why is rawon so dark?",
+      "What does rawon taste like?",
+      "How is rawon different from other beef soups?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "martabak-manis",
+    "kind": "dish",
+    "title": "Martabak manis",
+    "subtitle": "Thick griddled pancake filled with sweet toppings",
+    "summary": "A thick, spongy sweet griddled cake folded over generous fillings like chocolate, peanuts, cheese, or condensed milk.",
+    "story": "Martabak manis is rich, indulgent, and unapologetically generous. It is usually eaten by sharing slices, and the experience is as much about abundance as flavor: buttery edges, a soft honeycombed center, and fillings that make it feel halfway between street snack and celebration treat.",
+    "tasteNotes": ["sweet", "buttery", "soft", "indulgent"],
+    "highlights": [
+      "Often bought to share rather than eat alone",
+      "Texture matters: soft interior, richer edges, lots of filling",
+      "Toppings vary a lot, from classic chocolate-peanut to newer combinations"
+    ],
+    "region": "Popular across Indonesia",
+    "aliases": ["bright moon pancake", "terang bulan"],
+    "tags": ["dessert", "street food", "sweet", "shared snack"],
+    "relatedIDs": ["klepon", "street-food", "festive-feasts"],
+    "suggestedQuestions": [
+      "What does martabak manis feel like to eat?",
+      "Why is martabak manis so rich?",
+      "Is martabak manis a snack or a dessert?"
+    ],
+    "imageName": null,
+    "isFeatured": true
+  },
+  {
+    "id": "martabak-telur",
+    "kind": "dish",
+    "title": "Martabak telur",
+    "subtitle": "Savory stuffed pancake with egg and meat",
+    "summary": "A crisp, griddled savory martabak filled with egg, aromatics, and often minced meat.",
+    "story": "Martabak telur feels completely different from its sweet counterpart. It is thinner, crisper, more savory, and usually served in cut squares with pickles or sauce. The pleasure comes from the contrast between the crisp wrapper and the warm, seasoned filling.",
+    "tasteNotes": ["savory", "crisp", "rich", "aromatic"],
+    "highlights": [
+      "The sweet and savory martabak styles are different dishes, not small variations",
+      "Best known for its crispy exterior and soft filling",
+      "Often paired with condiments that brighten the richness"
+    ],
+    "region": "Popular across Indonesian cities and street-food settings",
+    "aliases": ["savory martabak"],
+    "tags": ["street food", "egg", "crispy", "savory snack"],
+    "relatedIDs": ["street-food", "kecap-manis", "sambal"],
+    "suggestedQuestions": [
+      "How is martabak telur different from martabak manis?",
+      "Is martabak telur a meal or a snack?",
+      "What usually comes with martabak telur?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "ayam-penyet",
+    "kind": "dish",
+    "title": "Ayam penyet",
+    "subtitle": "Fried chicken with sambal and crushed textures",
+    "summary": "A fried chicken dish usually served with sambal, rice, and crunchy or fresh sides.",
+    "story": "Ayam penyet is all about contrast: crackly fried chicken, assertive sambal, plain rice, and side elements that make the plate feel complete rather than just spicy. The dish often reads as bold and straightforward, but the balance between crispness, heat, and relief matters.",
+    "tasteNotes": ["crispy", "spicy", "savory", "bold"],
+    "highlights": [
+      "Sambal often drives the identity of the plate",
+      "Crisp texture and heat work together with rice for balance",
+      "Popular as a satisfying everyday restaurant or warung meal"
+    ],
+    "region": "Popular across Indonesia and neighboring regions",
+    "aliases": ["smashed fried chicken"],
+    "tags": ["chicken", "sambal", "fried", "rice plate"],
+    "relatedIDs": ["sambal", "sate", "tempeh"],
+    "suggestedQuestions": [
+      "Is ayam penyet mainly about the sambal?",
+      "What does ayam penyet usually come with?",
+      "Would I like ayam penyet if I like fried chicken?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "bubur-ayam",
+    "kind": "dish",
+    "title": "Bubur ayam",
+    "subtitle": "Savory rice porridge with layered toppings",
+    "summary": "A savory chicken rice porridge topped with crunchy, soft, and aromatic garnishes.",
+    "story": "Bubur ayam is a comfort dish that depends heavily on toppings and final balance. The porridge itself is soft and mild, while fried shallots, chicken, crackers, soy sauce, scallions, and sambal build contrast. It often feels like a quiet breakfast that still carries lots of texture.",
+    "tasteNotes": ["soft", "savory", "comforting", "layered"],
+    "highlights": [
+      "The toppings matter just as much as the porridge itself",
+      "Often associated with breakfast or a gentle start to the day",
+      "Can be customized from very mild to much bolder"
+    ],
+    "region": "Popular across Indonesia with regional preferences",
+    "aliases": ["chicken rice porridge"],
+    "tags": ["breakfast", "porridge", "chicken", "comfort food"],
+    "relatedIDs": ["soto-ayam", "bakso", "street-food"],
+    "suggestedQuestions": [
+      "Why do people love bubur ayam for breakfast?",
+      "Is bubur ayam bland or flavorful?",
+      "What toppings usually go on bubur ayam?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "tempeh",
+    "kind": "ingredient",
+    "title": "Tempeh",
+    "subtitle": "Fermented soybean cake with a nutty bite",
+    "summary": "A firm fermented soybean product that can be fried, stewed, grilled, or added into many everyday dishes.",
+    "story": "Tempeh is one of Indonesia’s most important everyday ingredients. It is prized not because it is flashy, but because it is versatile, satisfying, and deeply embedded in ordinary cooking. The flavor is nutty and savory, and the texture can go from soft to crisp depending on how it is prepared.",
+    "tasteNotes": ["nutty", "savory", "earthy", "firm"],
+    "highlights": [
+      "Often eaten by itself, not just as a supporting ingredient",
+      "Frying can make the edges crisp while keeping the inside tender",
+      "A good gateway ingredient for understanding everyday Indonesian cooking"
+    ],
+    "region": "Especially associated with Java, but used widely",
+    "aliases": ["tempe"],
+    "tags": ["soybeans", "fermented", "protein", "everyday cooking"],
+    "relatedIDs": ["gado-gado", "street-food", "ayam-penyet"],
+    "suggestedQuestions": [
+      "What does tempeh taste like?",
+      "How is tempeh different from tofu?",
+      "Where might I see tempeh in Indonesian food?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "sambal",
+    "kind": "ingredient",
+    "title": "Sambal",
+    "subtitle": "Chile-based condiment with many personalities",
+    "summary": "A broad family of Indonesian chile condiments that can be fresh, cooked, smoky, bright, sweet, or deeply savory.",
+    "story": "Sambal is less one thing than a whole category of flavor. Some versions are raw and bright, some are cooked down and rounded, some are fiery, and others balance sweetness, shrimp paste, tomato, or lime. It is often the detail that turns a familiar plate into something unmistakably Indonesian.",
+    "tasteNotes": ["spicy", "bright", "savory", "variable"],
+    "highlights": [
+      "Heat level can vary dramatically",
+      "Different sambals serve different roles at the table",
+      "A small spoonful can change the whole dish"
+    ],
+    "region": "Used across Indonesia with many regional styles",
+    "aliases": ["chili paste"],
+    "tags": ["condiment", "chili", "table sauce", "spicy"],
+    "relatedIDs": ["rendang", "nasi-goreng", "sate", "ayam-penyet"],
+    "suggestedQuestions": [
+      "Is all sambal extremely spicy?",
+      "Why are there so many kinds of sambal?",
+      "What dishes often come with sambal?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "kecap-manis",
+    "kind": "ingredient",
+    "title": "Kecap manis",
+    "subtitle": "Sweet soy sauce with caramel depth",
+    "summary": "A thick, sweet Indonesian soy sauce that adds gloss, color, and rounded savory sweetness to many dishes.",
+    "story": "Kecap manis is one of those pantry ingredients that quietly defines flavor. It can make fried rice darker and more fragrant, give grilled dishes a glossy sweetness, or soften sharper edges in a sauce. The sweetness is unmistakable, but it usually works together with savory depth rather than sitting on top of the food.",
+    "tasteNotes": ["sweet", "savory", "caramelized", "rounded"],
+    "highlights": [
+      "Often thicker than standard soy sauce",
+      "A key reason many dishes have a sweet-savory balance",
+      "Used both in cooking and at the table"
+    ],
+    "region": "Used widely across Indonesia",
+    "aliases": ["sweet soy sauce"],
+    "tags": ["condiment", "soy sauce", "sweet-savory", "pantry"],
+    "relatedIDs": ["nasi-goreng", "sate", "martabak-telur"],
+    "suggestedQuestions": [
+      "What does kecap manis add to a dish?",
+      "Is kecap manis used in nasi goreng?",
+      "How is kecap manis different from soy sauce?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "coconut-milk",
+    "kind": "ingredient",
+    "title": "Coconut milk",
+    "subtitle": "Creamy base that can feel rich, soft, or fragrant",
+    "summary": "A foundational ingredient that adds body, fragrance, and richness to both savory and sweet Indonesian dishes.",
+    "story": "Coconut milk appears so often in Indonesian food because it can do many jobs at once. It can soften spicy edges, create richness without dairy, and give both desserts and savory dishes a fuller, rounder feel. Sometimes it dominates; other times it simply makes everything feel more complete.",
+    "tasteNotes": ["creamy", "fragrant", "rich", "softening"],
+    "highlights": [
+      "Used across sweets, curries, soups, and braises",
+      "Can make bold spice feel more rounded rather than weaker",
+      "Important for texture as much as flavor"
+    ],
+    "region": "Used widely across Indonesia",
+    "aliases": ["santan"],
+    "tags": ["ingredient", "richness", "dessert", "savory base"],
+    "relatedIDs": ["klepon", "rendang", "gudeg"],
+    "suggestedQuestions": [
+      "Why is coconut milk so common in Indonesian food?",
+      "Does coconut milk make a dish taste sweet?",
+      "What dishes rely heavily on coconut milk?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "street-food",
+    "kind": "tradition",
+    "title": "Street food culture",
+    "subtitle": "Everyday meals, snacks, smoke, and quick comfort",
+    "summary": "A huge part of Indonesian food culture built around vendors, market snacks, portable meals, and dishes made to be eaten fresh and fast.",
+    "story": "Street food in Indonesia is not just about convenience. It is about rhythm, routine, and local character: breakfast soups, afternoon snacks, skewers at dusk, market sweets, and dishes tuned to be satisfying, affordable, and full of personality. Many people meet Indonesian food through this everyday side of it first.",
+    "tasteNotes": ["varied", "freshly cooked", "comforting", "bold"],
+    "highlights": [
+      "Street food can mean anything from a simple cart to a bustling market stall",
+      "Texture, aroma, and immediacy matter as much as ingredients",
+      "A good way to understand how broad Indonesian food really is"
+    ],
+    "region": "Across Indonesia",
+    "aliases": ["street eats", "warung culture"],
+    "tags": ["culture", "vendors", "markets", "everyday food"],
+    "relatedIDs": ["nasi-goreng", "sate", "pempek", "martabak-manis"],
+    "suggestedQuestions": [
+      "What kinds of dishes are common as Indonesian street food?",
+      "Why does street food matter so much here?",
+      "What is a good first street food dish to try?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  },
+  {
+    "id": "festive-feasts",
+    "kind": "tradition",
+    "title": "Festive and special-occasion foods",
+    "subtitle": "Food as gathering, generosity, and memory",
+    "summary": "Many Indonesian dishes are tied closely to celebrations, family gatherings, religious moments, and ceremonial meals.",
+    "story": "Indonesian food often makes the most sense when you see it as part of a gathering. Certain dishes feel everyday, while others carry a stronger sense of occasion, generosity, or communal pride. Even a small sweet snack can feel more meaningful when it appears in a festive spread beside savory dishes and shared plates.",
+    "tasteNotes": ["varied", "abundant", "communal", "ceremonial"],
+    "highlights": [
+      "Special-occasion foods often emphasize abundance and sharing",
+      "The same dish can feel ordinary in one setting and ceremonial in another",
+      "Regional and family traditions matter a lot"
+    ],
+    "region": "Across Indonesia, with local differences",
+    "aliases": ["celebration foods"],
+    "tags": ["culture", "celebration", "family", "tradition"],
+    "relatedIDs": ["klepon", "rendang", "gudeg", "martabak-manis"],
+    "suggestedQuestions": [
+      "Which dishes feel especially festive?",
+      "Why does Indonesian food feel so communal?",
+      "Where does klepon fit in a festive spread?"
+    ],
+    "imageName": null,
+    "isFeatured": false
+  }
+]
