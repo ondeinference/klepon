@@ -1,54 +1,101 @@
 import SwiftUI
 
-private struct WatchGuideEntry: Identifiable {
-    let id: String
-    let title: String
-    let subtitle: String
-    let notes: [String]
+private struct WatchGuideStore {
+    let entries: [GuideEntry] = WatchContentLoader().loadEntries()
+
+    var featuredEntries: [GuideEntry] {
+        Array(entries.filter(\.isFeatured).prefix(4))
+    }
+
+    var browseEntries: [GuideEntry] {
+        let featuredIDs = Set(featuredEntries.map(\.id))
+        let remaining = entries.filter { !featuredIDs.contains($0.id) }
+        return Array((featuredEntries + remaining).prefix(8))
+    }
 }
 
-private let watchEntries: [WatchGuideEntry] = [
-    .init(
-        id: "klepon",
-        title: "Klepon",
-        subtitle: "Sweet rice cake with palm sugar",
-        notes: ["Chewy", "Coconut", "Palm sugar"]
-    ),
-    .init(
-        id: "rendang",
-        title: "Rendang",
-        subtitle: "Slow-cooked beef with deep spice",
-        notes: ["Rich", "Savory", "West Sumatra"]
-    ),
-    .init(
-        id: "nasi-goreng",
-        title: "Nasi goreng",
-        subtitle: "Indonesia’s beloved fried rice",
-        notes: ["Smoky", "Comforting", "Kecap manis"]
-    ),
-    .init(
-        id: "sate",
-        title: "Sate",
-        subtitle: "Skewered grilled meat with sauce",
-        notes: ["Grilled", "Street food", "Peanut sauce"]
-    ),
-]
-
 struct WatchHomeView: View {
+    private let store = WatchGuideStore()
+
     var body: some View {
         NavigationStack {
-            List(watchEntries) { entry in
-                NavigationLink(entry.title) {
-                    WatchEntryDetailView(entry: entry)
+            if store.entries.isEmpty {
+                ScrollView {
+                    VStack(spacing: 10) {
+                        Image(systemName: "fork.knife.circle")
+                            .font(.title2)
+                            .foregroundStyle(.secondary)
+
+                        Text("Guide unavailable")
+                            .font(.headline)
+
+                        Text(
+                            "Open Klepon on iPhone first if you want the fuller guide and private follow-up answers."
+                        )
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                    }
+                    .padding()
                 }
+                .navigationTitle("Klepon")
+            } else {
+                List {
+                    if !store.featuredEntries.isEmpty {
+                        Section("Start here") {
+                            ForEach(store.featuredEntries) { entry in
+                                NavigationLink {
+                                    WatchEntryDetailView(entry: entry)
+                                } label: {
+                                    EntryRow(entry: entry)
+                                }
+                            }
+                        }
+                    }
+
+                    Section("Browse") {
+                        ForEach(store.browseEntries) { entry in
+                            NavigationLink {
+                                WatchEntryDetailView(entry: entry)
+                            } label: {
+                                EntryRow(entry: entry)
+                            }
+                        }
+                    }
+
+                    Section {
+                        Text(
+                            "Browse on watch. Use the iPhone app for the full guide and private follow-up answers."
+                        )
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    }
+                }
+                .navigationTitle("Klepon")
             }
-            .navigationTitle("Klepon")
         }
     }
 }
 
+private struct EntryRow: View {
+    let entry: GuideEntry
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(entry.title)
+                .font(.headline)
+
+            Text(entry.subtitle)
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+        }
+        .padding(.vertical, 2)
+    }
+}
+
 private struct WatchEntryDetailView: View {
-    let entry: WatchGuideEntry
+    let entry: GuideEntry
 
     var body: some View {
         ScrollView {
@@ -60,19 +107,60 @@ private struct WatchEntryDetailView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 
-                ForEach(entry.notes, id: \.self) { note in
-                    Text("• \(note)")
-                        .font(.footnote)
+                if let region = entry.region {
+                    Text(region)
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
 
-                Text("Watch support is browse-first for now.")
+                Divider()
+
+                Text(entry.summary)
                     .font(.footnote)
-                    .foregroundStyle(.secondary)
-                    .padding(.top, 6)
+
+                if !entry.tasteNotes.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Taste")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary)
+
+                        ForEach(Array(entry.tasteNotes.prefix(3)), id: \.self) { note in
+                            Text("• \(note)")
+                                .font(.footnote)
+                        }
+                    }
+                }
+
+                if !entry.highlights.isEmpty {
+                    Divider()
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Quick notes")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary)
+
+                        ForEach(Array(entry.highlights.prefix(3)), id: \.self) { note in
+                            Text("• \(note)")
+                                .font(.footnote)
+                        }
+                    }
+                }
+
+                Divider()
+
+                Text(
+                    "Open Klepon on iPhone if you want the fuller guide and on-device follow-up answers."
+                )
+                .font(.footnote)
+                .foregroundStyle(.secondary)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
         .navigationTitle(entry.title)
     }
+}
+
+#Preview {
+    WatchHomeView()
 }

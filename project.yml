@@ -73,17 +73,20 @@ targets:
     platform: watchOS
     sources:
       - path: KleponWatch
+      - path: Klepon/Domain/GuideEntry.swift
+      - path: Klepon/Resources/Content
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.watchkitapp
         PRODUCT_NAME: Klepon Watch
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: 1
-        GENERATE_INFOPLIST_FILE: YES
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: KleponWatch/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         ENABLE_USER_SCRIPT_SANDBOXING: YES
-        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: ""
         SDKROOT: watchos
         TARGETED_DEVICE_FAMILY: 4
         SKIP_INSTALL: YES

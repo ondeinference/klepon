@@ -1,0 +1,31 @@
+# Screenshot plan
+
+## iPhone screenshots
+
+1. `Discover the taste of Indonesia`
+   - Show the Discover screen with the editorial hero and featured dish.
+2. `Browse iconic dishes and local favorites`
+   - Show collections and a few richer browse cards.
+3. `Learn what each dish is really like`
+   - Show a detail screen with summary, taste, and quick notes.
+4. `Search dishes, ingredients, and traditions`
+   - Show a realistic search result screen.
+5. `Ask follow-up questions privately`
+   - Show the private answer sheet with grounded sections.
+6. `Save what you want to try next`
+   - Show the Saved screen with a short personal list.
+
+## Apple Watch screenshots
+
+1. `Browse on your wrist`
+   - Show the watch home screen with a short starter list.
+2. `Quick notes for familiar dishes`
+   - Show a watch detail view with subtitle, taste notes, and highlights.
+
+## Capture notes
+
+- Use real app content, not placeholder lorem ipsum.
+- Keep device chrome clean and consistent.
+- Prefer the light theme currently used by the app.
+- Avoid showing setup errors, loading failures, or half-finished states.
+- Use a short, real Saved list before taking the screenshot.

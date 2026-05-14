@@ -20,6 +20,7 @@ This repo is under active development, but the V1 direction is already in place:
 - curated Indonesian food content bundled locally
 - private on-device follow-up answers powered by [Onde Inference](https://ondeinference.com).
 - iPhone-first SwiftUI UI and interaction model
+- watchOS companion support for quick browse-first dish notes
 - local search, saved items, recent searches, and recently viewed continuity
 
 ## Repository layout
@@ -28,6 +29,7 @@ This repo is under active development, but the V1 direction is already in place:
 - `Klepon.xcodeproj/` — the Xcode project
 - `Scripts/validate_content.py` — validates bundled content integrity
 - `SECURITY.md` — security handling and disclosure guidance
+- `AppStore/` — App Store metadata, screenshot plan, and release checklists
 
 ## Tech stack
 
@@ -54,6 +56,12 @@ Open:
 
 ```/dev/null/sh#L1-1
 xcodebuild -project Klepon.xcodeproj -scheme Klepon -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+```
+
+### Build the watchOS target
+
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Watch' -destination 'generic/platform=watchOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
 ### Validate bundled content
