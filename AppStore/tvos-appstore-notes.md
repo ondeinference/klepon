@@ -30,7 +30,7 @@ Important settings:
 - `ITSAppUsesNonExemptEncryption = false`
 - `com.apple.security.application-groups = group.com.ondeinference.apps`
 
-The App Group keeps local model storage aligned with the other Apple targets.
+`ITSAppUsesNonExemptEncryption` is an Info.plist declaration, not an entitlement. The App Group entitlement keeps local model storage aligned with the other Apple targets.
 
 ## Build and archive
 

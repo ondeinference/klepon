@@ -19,8 +19,9 @@ Required keys for the shipping App Store build:
 - `com.apple.security.app-sandbox = true`
 - `com.apple.security.network.client = true`
 - `com.apple.security.application-groups = group.com.ondeinference.apps`
+- `ITSAppUsesNonExemptEncryption = false` in `KleponMac/Info.plist`
 
-The sandbox entitlement is mandatory for App Store validation. The network entitlement is needed because Onde can download the optional on-device guide. The app group keeps local model storage aligned with the other Apple targets.
+The sandbox entitlement is mandatory for App Store validation. The network entitlement is needed because Onde can download the optional on-device guide. `ITSAppUsesNonExemptEncryption` is an Info.plist declaration, not an entitlement. The app group keeps local model storage aligned with the other Apple targets.
 
 ## Xcode project notes
 

@@ -32,6 +32,7 @@
 - [ ] watch bundle identifier is correct
 - [ ] App Group entitlement is correct for the shipping account
 - [ ] macOS App Sandbox entitlement is enabled for the shipping build
+- [ ] Apple platform Info.plists set `ITSAppUsesNonExemptEncryption = false`
 - [ ] Provisioning profiles and signing identities are valid
 
 ## Final gate
