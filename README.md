@@ -51,3 +51,7 @@ If you run your own fork, change the bundle identifier and App Group to values y
 ## License
 
 Dual-licensed under [MIT](LICENSE-MIT) or [Apache 2.0](LICENSE-APACHE).
+
+## Copyright
+
+© 2026 [Onde Inference](https://ondeinference.com) (Splitfire AB).
