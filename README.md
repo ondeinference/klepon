@@ -17,6 +17,7 @@ Klepon is a small SwiftUI guide to Indonesian dishes, ingredients, and food trad
 - private on-device follow-up answers with [Onde Inference](https://ondeinference.com)
 - search, saved items, and recently viewed
 - Apple TV support with tvOS focus-friendly navigation
+- native macOS app support
 - visionOS window support, kept intentionally simple for v1
 - watchOS companion support
 
@@ -66,6 +67,8 @@ python3 Scripts/validate_content.py
 ## Signing
 
 If you run your own fork, change the bundle identifier and App Group to values you control.
+
+The macOS target uses the same main app bundle identifier as iPhone and a sandboxed entitlements file for App Store distribution.
 
 ## License
 
