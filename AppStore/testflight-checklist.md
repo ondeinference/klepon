@@ -13,6 +13,7 @@
 - [ ] iPhone target builds on simulator
 - [ ] iPhone target runs on a real device
 - [ ] macOS target builds on the release Xcode version
+- [ ] tvOS target builds on the release Xcode version
 - [ ] visionOS target builds on the release Xcode version
 - [ ] Watch target builds on simulator
 - [ ] Watch target runs with the paired iPhone app
@@ -39,4 +40,5 @@
 - [ ] No local machine junk files are staged
 - [ ] Bundle identifiers and App Group values are intentional for the release build
 - [ ] macOS release signing uses the sandboxed entitlements file
+- [ ] tvOS release signing uses the shared app identifier and App Group entitlement
 - [ ] visionOS release signing uses the shared app identifier and App Group entitlement

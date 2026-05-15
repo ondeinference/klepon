@@ -24,6 +24,15 @@
 3. `Ask privately on device`
    - Show the ask flow with a grounded answer card and source chips.
 
+## tvOS screenshots
+
+1. `A calm guide on Apple TV`
+   - Show the Discover screen with focus on the featured dish and one visible collection rail.
+2. `Browse and save from the couch`
+   - Show a readable Search or Saved view with a realistic shortlist.
+3. `Ask privately on device`
+   - Show the ask flow with a grounded answer card and focus-friendly suggestions.
+
 ## visionOS screenshots
 
 1. `A calm guide in your space`

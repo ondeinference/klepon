@@ -322,7 +322,7 @@ targets:
           echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.tv
+        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
         PRODUCT_NAME: Klepon
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: 1

@@ -4,6 +4,7 @@
 
 - [ ] iPhone app builds cleanly
 - [ ] macOS app builds cleanly
+- [ ] tvOS app builds cleanly
 - [ ] visionOS app builds cleanly
 - [ ] watchOS companion builds cleanly
 - [ ] README is current
@@ -18,6 +19,7 @@
 - [ ] Ask flow works on device with acceptable latency
 - [ ] Watch app content is readable and useful at a glance
 - [ ] macOS window flows feel native and polished enough for v1
+- [ ] tvOS focus and remote navigation feel polished enough for v1
 - [ ] visionOS window flows feel polished enough for a simple v1
 - [ ] No obvious sample-app copy remains
 
@@ -25,6 +27,7 @@
 
 - [ ] iPhone bundle identifier is correct
 - [ ] macOS bundle identifier is correct
+- [ ] tvOS bundle identifier is correct
 - [ ] visionOS bundle identifier is correct
 - [ ] watch bundle identifier is correct
 - [ ] App Group entitlement is correct for the shipping account
@@ -35,6 +38,7 @@
 
 - [ ] TestFlight build installed on at least one real iPhone
 - [ ] macOS archive validates cleanly for App Store submission
+- [ ] tvOS archive validates cleanly for App Store submission
 - [ ] visionOS archive validates cleanly for App Store submission
 - [ ] Watch companion installed and tested on at least one real Apple Watch
 - [ ] Release notes are written

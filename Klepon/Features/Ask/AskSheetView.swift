@@ -34,7 +34,9 @@ struct AskSheetView: View {
                         Button("Close") {
                             dismiss()
                         }
-                        .keyboardShortcut(.cancelAction)
+                        #if os(macOS)
+                            .keyboardShortcut(.cancelAction)
+                        #endif
                     }
                 #endif
 
@@ -187,7 +189,9 @@ struct AskSheetView: View {
                 Button("Close") {
                     dismiss()
                 }
-                .keyboardShortcut(.cancelAction)
+                #if os(macOS)
+                    .keyboardShortcut(.cancelAction)
+                #endif
                 .tint(KleponColor.accent)
             }
         }

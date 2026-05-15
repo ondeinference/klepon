@@ -68,7 +68,7 @@ python3 Scripts/validate_content.py
 
 If you run your own fork, change the bundle identifier and App Group to values you control.
 
-The macOS and visionOS targets use the same main app bundle identifier as iPhone. The macOS target also uses a sandboxed entitlements file for App Store distribution.
+The macOS, tvOS, and visionOS targets use the same main app bundle identifier as iPhone. The macOS target also uses a sandboxed entitlements file for App Store distribution.
 
 ## License
 
