@@ -892,7 +892,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				PRODUCT_NAME = Klepon;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -917,7 +917,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				PRODUCT_NAME = Klepon;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

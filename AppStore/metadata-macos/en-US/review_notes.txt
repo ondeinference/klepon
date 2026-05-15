@@ -1,0 +1,5 @@
+This macOS app is browse-first and fully usable without enabling the private guide.
+
+The private guide is optional. If the user chooses to enable it, the app downloads a local on-device model and uses it for short follow-up answers inside the guide.
+
+The macOS app is sandboxed and uses the app group container for local model storage when available.

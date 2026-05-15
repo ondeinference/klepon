@@ -54,7 +54,7 @@ python3 Scripts/validate_content.py
 
 If you run your own fork, change the bundle identifier and App Group to values you control.
 
-The macOS target uses a separate bundle identifier and a sandboxed entitlements file for App Store distribution.
+The macOS target uses the same main app bundle identifier as iPhone and a sandboxed entitlements file for App Store distribution.
 
 ## License
 
