@@ -16,12 +16,16 @@ Klepon is a small SwiftUI guide to Indonesian dishes, ingredients, and food trad
 - curated local content
 - private on-device follow-up answers with [Onde Inference](https://ondeinference.com)
 - search, saved items, and recently viewed
+- Apple TV support with tvOS focus-friendly navigation
 - native macOS app support
+- visionOS window support, kept intentionally simple for v1
 - watchOS companion support
 
 ## Repo
 
-- `Klepon/` app source
+- `Klepon/` shared iOS, macOS, tvOS, and visionOS app source
+- `KleponTV/` tvOS target configuration
+- `KleponVision/` visionOS target configuration
 - `Klepon.xcodeproj/` Xcode project
 - `Scripts/validate_content.py` content validation
 - `AppStore/` store assets and release notes
@@ -40,6 +44,16 @@ macOS:
 xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Mac' -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build
 ```
 
+tvOS simulator:
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon TV' -destination 'generic/platform=tvOS Simulator' CODE_SIGNING_ALLOWED=NO build
+```
+
+visionOS simulator:
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Vision' -destination 'generic/platform=visionOS Simulator' CODE_SIGNING_ALLOWED=NO build
+```
+
 watchOS simulator:
 ```/dev/null/sh#L1-1
 xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Watch' -destination 'generic/platform=watchOS Simulator' CODE_SIGNING_ALLOWED=NO build
@@ -54,7 +68,7 @@ python3 Scripts/validate_content.py
 
 If you run your own fork, change the bundle identifier and App Group to values you control.
 
-The macOS target uses the same main app bundle identifier as iPhone and a sandboxed entitlements file for App Store distribution.
+The macOS, tvOS, and visionOS targets use the same main app bundle identifier as iPhone. The macOS target also uses a sandboxed entitlements file for App Store distribution.
 
 ## License
 

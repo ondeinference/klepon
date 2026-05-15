@@ -144,7 +144,9 @@ struct SettingsView: View {
 
                         KleponActionButton(title: "Show welcome again", tone: .secondary) {
                             appState.hasCompletedOnboarding = false
-                            dismiss()
+                            #if !os(tvOS)
+                                dismiss()
+                            #endif
                         }
                     }
                 }
@@ -168,13 +170,15 @@ struct SettingsView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Settings")
-        .toolbar {
-            ToolbarItem(placement: .kleponPrimaryAction) {
-                Button("Done") {
-                    dismiss()
+        #if !os(tvOS)
+            .toolbar {
+                ToolbarItem(placement: .kleponPrimaryAction) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                    .tint(KleponColor.accent)
                 }
-                .tint(KleponColor.accent)
             }
-        }
+        #endif
     }
 }

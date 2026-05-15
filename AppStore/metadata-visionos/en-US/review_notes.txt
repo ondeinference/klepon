@@ -1,0 +1,5 @@
+This visionOS app is a simple windowed guide and is fully usable without enabling the private guide.
+
+The private guide is optional. If the user chooses to enable it, the app downloads a local on-device model and uses it for short follow-up answers inside the guide.
+
+The visionOS target uses the same main app bundle identifier as the iPhone app and uses the shared app group container for local model storage when available.

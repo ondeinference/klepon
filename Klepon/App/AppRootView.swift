@@ -5,6 +5,9 @@ struct AppRootView: View {
         case discover
         case search
         case saved
+        #if os(tvOS)
+            case settings
+        #endif
     }
 
     @EnvironmentObject private var appState: AppState
@@ -38,17 +41,29 @@ struct AppRootView: View {
                 Label("Saved", systemImage: "heart")
             }
             .tag(Tab.saved)
+
+            #if os(tvOS)
+                NavigationStack {
+                    SettingsView()
+                }
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape.2")
+                }
+                .tag(Tab.settings)
+            #endif
         }
         .tint(KleponColor.accent)
         .background(KleponColor.background.ignoresSafeArea())
-        .sheet(isPresented: $showingSettings) {
-            NavigationStack {
-                SettingsView()
+        #if !os(tvOS)
+            .sheet(isPresented: $showingSettings) {
+                NavigationStack {
+                    SettingsView()
+                }
+                #if os(macOS) || os(visionOS)
+                    .frame(minWidth: 480, minHeight: 620)
+                #endif
             }
-            #if os(macOS)
-                .frame(minWidth: 480, minHeight: 620)
-            #endif
-        }
+        #endif
         .kleponOnboardingPresentation(isPresented: $showingOnboarding) {
             OnboardingView(
                 onBrowseFirst: {
@@ -58,7 +73,7 @@ struct AppRootView: View {
                     appState.completeOnboarding()
                 }
             )
-            #if os(macOS)
+            #if os(macOS) || os(visionOS)
                 .frame(minWidth: 640, minHeight: 760)
             #endif
         }
@@ -69,7 +84,7 @@ struct AppRootView: View {
         .onChange(of: appState.hasCompletedOnboarding) { _, newValue in
             showingOnboarding = !newValue
         }
-        #if os(macOS)
+        #if os(macOS) || os(visionOS)
             .frame(minWidth: 980, minHeight: 720)
         #endif
     }

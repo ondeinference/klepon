@@ -80,7 +80,7 @@ struct GuideDetailView: View {
                                     }
                                 }
                             }
-                            .buttonStyle(.plain)
+                            .kleponInteractiveButtonStyle()
                         }
                     }
                 }
@@ -184,7 +184,7 @@ struct GuideDetailView: View {
                                         )
                                         .foregroundStyle(KleponColor.textPrimary)
                                 }
-                                .buttonStyle(.plain)
+                                .kleponInteractiveButtonStyle()
                             }
                         }
                     }

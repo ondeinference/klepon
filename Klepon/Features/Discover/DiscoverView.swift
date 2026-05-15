@@ -39,7 +39,7 @@ struct DiscoverView: View {
                     } label: {
                         FeaturedEntryCard(entry: featuredEntry)
                     }
-                    .buttonStyle(.plain)
+                    .kleponInteractiveButtonStyle()
                 } else {
                     EmptyStateView(
                         title: "Curated dishes are on the way",
@@ -75,7 +75,7 @@ struct DiscoverView: View {
                             } label: {
                                 EntryListCard(entry: entry)
                             }
-                            .buttonStyle(.plain)
+                            .kleponInteractiveButtonStyle()
                         }
                     }
                 }
@@ -92,7 +92,7 @@ struct DiscoverView: View {
                             } label: {
                                 EntryListCard(entry: entry)
                             }
-                            .buttonStyle(.plain)
+                            .kleponInteractiveButtonStyle()
                         }
                     }
                 }
@@ -105,16 +105,18 @@ struct DiscoverView: View {
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Klepon")
         .kleponLargeNavigationTitle()
-        .toolbar {
-            ToolbarItem(placement: .kleponPrimaryAction) {
-                Button {
-                    showingSettings = true
-                } label: {
-                    Image(systemName: "gearshape.2")
+        #if !os(tvOS)
+            .toolbar {
+                ToolbarItem(placement: .kleponPrimaryAction) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Image(systemName: "gearshape.2")
+                    }
+                    .tint(KleponColor.accent)
                 }
-                .tint(KleponColor.accent)
             }
-        }
+        #endif
     }
 
     private var introSection: some View {
@@ -302,7 +304,7 @@ private struct CollectionRail: View {
                                     .fill(KleponColor.surfaceSecondary)
                             )
                         }
-                        .buttonStyle(.plain)
+                        .kleponInteractiveButtonStyle()
                     }
                 }
             }

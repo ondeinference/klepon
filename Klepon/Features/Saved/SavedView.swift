@@ -40,7 +40,7 @@ struct SavedView: View {
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 }
-                                .buttonStyle(.plain)
+                                .kleponInteractiveButtonStyle()
 
                                 Button {
                                     favoritesStore.toggle(entry.id)
@@ -50,7 +50,7 @@ struct SavedView: View {
                                         .padding(10)
                                         .background(Circle().fill(KleponColor.surfaceSecondary))
                                 }
-                                .buttonStyle(.plain)
+                                .kleponInteractiveButtonStyle()
                             }
                         }
                     }

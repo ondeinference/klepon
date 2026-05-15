@@ -16,7 +16,7 @@ struct KleponApp: App {
                     .preferredColorScheme(.light)
                 #endif
         }
-        #if os(macOS)
+        #if os(macOS) || os(visionOS)
             .defaultSize(width: 1100, height: 760)
         #endif
     }

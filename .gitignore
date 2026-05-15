@@ -28,6 +28,7 @@ project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 # Xcode build artifacts
 build/
 DerivedData/
+.worktrees/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
