@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ondeinference/onde-swift",
       "state" : {
-        "revision" : "83bfe89489d3eee34a960dd7a3db31dc26735a09",
-        "version" : "1.0.0"
+        "revision" : "d121bc121c2234964e71569e86cbb93cc750361e",
+        "version" : "1.1.0"
       }
     }
   ],
