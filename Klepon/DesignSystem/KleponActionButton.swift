@@ -34,7 +34,7 @@ struct KleponActionButton: View {
             )
             .foregroundStyle(foregroundColor)
         }
-        .buttonStyle(.plain)
+        .kleponInteractiveButtonStyle()
         .disabled(isDisabled || isLoading)
         .opacity((isDisabled || isLoading) && tone == .primary ? 0.85 : 1)
     }

@@ -58,3 +58,53 @@ jobs:
             -scheme 'Klepon Mac' \
             -destination 'platform=macOS' \
             CODE_SIGNING_ALLOWED=NO
+
+  tvos-build:
+    name: tvOS app build
+    runs-on: macos-26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Resolve Swift packages
+        run: xcodebuild -project Klepon.xcodeproj -scheme 'Klepon TV' -resolvePackageDependencies
+
+      - name: Build tvOS app
+        run: |
+          xcodebuild build \
+            -project Klepon.xcodeproj \
+            -scheme 'Klepon TV' \
+            -destination 'generic/platform=tvOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO
+
+  visionos-build:
+    name: visionOS app build
+    runs-on: macos-26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Resolve Swift packages
+        run: xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Vision' -resolvePackageDependencies
+
+      - name: Build visionOS app
+        run: |
+          xcodebuild build \
+            -project Klepon.xcodeproj \
+            -scheme 'Klepon Vision' \
+            -destination 'generic/platform=visionOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO

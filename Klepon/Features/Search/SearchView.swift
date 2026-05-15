@@ -35,7 +35,7 @@ struct SearchView: View {
                                     } label: {
                                         KleponChip(title: recentQuery, icon: "clock")
                                     }
-                                    .buttonStyle(.plain)
+                                    .kleponInteractiveButtonStyle()
                                 }
                             }
                         }
@@ -56,7 +56,7 @@ struct SearchView: View {
                                 appState.recentSearchStore.record(entry.title)
                             }
                         )
-                        .buttonStyle(.plain)
+                        .kleponInteractiveButtonStyle()
                     }
 
                     if !recentEntries.isEmpty {
@@ -69,7 +69,7 @@ struct SearchView: View {
                                 } label: {
                                     SearchResultCard(entry: entry)
                                 }
-                                .buttonStyle(.plain)
+                                .kleponInteractiveButtonStyle()
                             }
                         }
                     }
@@ -94,7 +94,7 @@ struct SearchView: View {
                                 appState.recentSearchStore.record(query)
                             }
                         )
-                        .buttonStyle(.plain)
+                        .kleponInteractiveButtonStyle()
                     }
                 }
             }

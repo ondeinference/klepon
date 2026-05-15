@@ -73,7 +73,7 @@ struct AskSheetView: View {
                                     )
                                     .foregroundStyle(KleponColor.textPrimary)
                             }
-                            .buttonStyle(.plain)
+                            .kleponInteractiveButtonStyle()
                             .disabled(isLoading)
                         }
                     }
@@ -82,12 +82,24 @@ struct AskSheetView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     SectionHeader("Your question")
 
-                    TextField(
-                        "Ask about taste, ingredients, or what to try next", text: $question,
-                        axis: .vertical
-                    )
-                    .textFieldStyle(.roundedBorder)
-                    .lineLimit(2...5)
+                    #if os(tvOS)
+                        TextField(
+                            "Ask about taste, ingredients, or what to try next", text: $question
+                        )
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .fill(KleponColor.surfaceSecondary)
+                        )
+                    #else
+                        TextField(
+                            "Ask about taste, ingredients, or what to try next", text: $question,
+                            axis: .vertical
+                        )
+                        .textFieldStyle(.roundedBorder)
+                        .lineLimit(2...5)
+                    #endif
 
                     KleponActionButton(
                         title: isLoading ? "Thinking" : "Get answer",
@@ -266,7 +278,7 @@ private struct AnswerCardView: View {
                                     )
                                     .foregroundStyle(KleponColor.textPrimary)
                             }
-                            .buttonStyle(.plain)
+                            .kleponInteractiveButtonStyle()
                             .disabled(isInteractionDisabled)
                         }
                     }

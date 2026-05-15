@@ -16,11 +16,15 @@ Klepon is a small SwiftUI guide to Indonesian dishes, ingredients, and food trad
 - curated local content
 - private on-device follow-up answers with [Onde Inference](https://ondeinference.com)
 - search, saved items, and recently viewed
+- Apple TV support with tvOS focus-friendly navigation
+- visionOS window support, kept intentionally simple for v1
 - watchOS companion support
 
 ## Repo
 
-- `Klepon/` app source
+- `Klepon/` shared iOS, macOS, tvOS, and visionOS app source
+- `KleponTV/` tvOS target configuration
+- `KleponVision/` visionOS target configuration
 - `Klepon.xcodeproj/` Xcode project
 - `Scripts/validate_content.py` content validation
 - `AppStore/` store assets and release notes
@@ -32,6 +36,21 @@ Open `Klepon.xcodeproj` in Xcode.
 iOS simulator:
 ```/dev/null/sh#L1-1
 xcodebuild -project Klepon.xcodeproj -scheme Klepon -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+```
+
+macOS:
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Mac' -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build
+```
+
+tvOS simulator:
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon TV' -destination 'generic/platform=tvOS Simulator' CODE_SIGNING_ALLOWED=NO build
+```
+
+visionOS simulator:
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Vision' -destination 'generic/platform=visionOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
 watchOS simulator:
