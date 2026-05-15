@@ -24,6 +24,15 @@
 3. `Ask privately on device`
    - Show the ask flow with a grounded answer card and source chips.
 
+## visionOS screenshots
+
+1. `A calm guide in your space`
+   - Show the Discover screen in the visionOS window with the featured dish and collections visible.
+2. `Search and save dishes naturally`
+   - Show a readable Search or Saved view with a realistic shortlist.
+3. `Ask privately on device`
+   - Show the ask flow with a grounded answer card and source chips.
+
 ## Apple Watch screenshots
 
 1. `Browse on your wrist`
