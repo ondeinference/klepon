@@ -30,6 +30,6 @@ jobs:
           xcodebuild test \
             -project Klepon.xcodeproj \
             -scheme Klepon \
-            -destination 'platform=iOS Simulator,OS=26.0.1,name=iPhone 17' \
+            -destination 'platform=iOS Simulator,OS=26.2,name=iPhone 17' \
             -only-testing:KleponSnapshotTests \
             CODE_SIGNING_ALLOWED=NO
