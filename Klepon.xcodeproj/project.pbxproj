@@ -48,12 +48,21 @@
 		D99AAE1CDE51139840A52607 /* KleponMetadataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1C50BFBE2EF5F37941590 /* KleponMetadataRow.swift */; };
 		DA915BA8B2F732E7D62CF936 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B5E3D9A1906C2FED3032 /* EmptyStateView.swift */; };
 		E45F257E3D35DC565B21B299 /* KleponColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */; };
+		E599CCDB1FE5331C4A1EB6C6 /* KleponSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E92BBAF958F5882F17C37 /* KleponSnapshotTests.swift */; };
+		EE88AEC7059BB2639687FECF /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 35214C3FF433B08C1C06C3F7 /* SnapshotTesting */; };
 		F1431179B54CEB23FFFCB2AE /* KleponApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE2A1E73EB15970A17A894 /* KleponApp.swift */; };
 		FA423A76BE098A9911044246 /* AskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6E7DC56DD8E1459EFC892 /* AskSheetView.swift */; };
 		FD0E1BA888E3CE73875D58FF /* RecentSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C24CD5A7B8399776539D1FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A5707BDA883282DEB132FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ADB11F6C1D51B9F9A9DB15F;
+			remoteInfo = Klepon;
+		};
 		D55C73775065842DC4A51797 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A5707BDA883282DEB132FF /* Project object */;
@@ -99,12 +108,14 @@
 		6B67BCC5A459288FB240C6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6EFBF98118F066D3C7FA14B2 /* KleponWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponWatchApp.swift; sourceTree = "<group>"; };
 		7541983FF7CE190C0663294D /* GuideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
+		759E92BBAF958F5882F17C37 /* KleponSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponSnapshotTests.swift; sourceTree = "<group>"; };
 		7F2850226B4B05FF758C1F93 /* GuideArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideArtworkView.swift; sourceTree = "<group>"; };
 		85E7B5E3D9A1906C2FED3032 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		868C58098969278A542893F3 /* KleponCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponCard.swift; sourceTree = "<group>"; };
 		98AA2E425D5454602F78D628 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		9E76510CC840CE068B0FC381 /* Klepon Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klepon Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4400AB0AB8D245325A00BA3 /* Klepon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Klepon.entitlements; sourceTree = "<group>"; };
+		A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KleponSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E1C50BFBE2EF5F37941590 /* KleponMetadataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponMetadataRow.swift; sourceTree = "<group>"; };
 		AF79D8DD27B9CA485140C934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B02B0EA4B8BA09604D62A62B /* AnswerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCard.swift; sourceTree = "<group>"; };
@@ -125,6 +136,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B161A429683CBAD2A984A5AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE88AEC7059BB2639687FECF /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F72797E506E8FA89264A5C68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +176,7 @@
 			children = (
 				9E76510CC840CE068B0FC381 /* Klepon Watch.app */,
 				5DE91827A635C0B0B72690EC /* Klepon.app */,
+				A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,6 +248,14 @@
 				DEDE2A1E73EB15970A17A894 /* KleponApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		825A58FCE091C3FE902D3131 /* KleponSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				759E92BBAF958F5882F17C37 /* KleponSnapshotTests.swift */,
+			);
+			path = KleponSnapshotTests;
 			sourceTree = "<group>";
 		};
 		82A3750644C21DE5F301405D /* AI */ = {
@@ -316,6 +344,7 @@
 			children = (
 				038E8FA398B5CB76373031FD /* Configs */,
 				EA4DFA44FE8BB01979ADB187 /* Klepon */,
+				825A58FCE091C3FE902D3131 /* KleponSnapshotTests */,
 				472BF5D47BEE4AF1EC80B645 /* KleponWatch */,
 				3F9369D339C14126AB44D720 /* Products */,
 			);
@@ -383,6 +412,26 @@
 			productReference = 9E76510CC840CE068B0FC381 /* Klepon Watch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F10E9562BA0BE60A7E000DB0 /* KleponSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 116221FC6D50F33334387509 /* Build configuration list for PBXNativeTarget "KleponSnapshotTests" */;
+			buildPhases = (
+				C2B1B8ADEE7B8E2628B90D1F /* Sources */,
+				B161A429683CBAD2A984A5AE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8D72D1B1BE79610DB905424 /* PBXTargetDependency */,
+			);
+			name = KleponSnapshotTests;
+			packageProductDependencies = (
+				35214C3FF433B08C1C06C3F7 /* SnapshotTesting */,
+			);
+			productName = KleponSnapshotTests;
+			productReference = A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -398,6 +447,9 @@
 					E8CEBF52617721AEE450A7CF = {
 						ProvisioningStyle = Automatic;
 					};
+					F10E9562BA0BE60A7E000DB0 = {
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 8911E6C6F25C3A4F99870749 /* Build configuration list for PBXProject "Klepon" */;
@@ -411,6 +463,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				AD8C734FB461604D5793769C /* XCRemoteSwiftPackageReference "onde-swift" */,
+				85B622113A5DC5A1BD2D123B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3F9369D339C14126AB44D720 /* Products */;
@@ -419,6 +472,7 @@
 			targets = (
 				2ADB11F6C1D51B9F9A9DB15F /* Klepon */,
 				E8CEBF52617721AEE450A7CF /* Klepon Watch */,
+				F10E9562BA0BE60A7E000DB0 /* KleponSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -540,6 +594,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2B1B8ADEE7B8E2628B90D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E599CCDB1FE5331C4A1EB6C6 /* KleponSnapshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -548,9 +610,54 @@
 			target = E8CEBF52617721AEE450A7CF /* Klepon Watch */;
 			targetProxy = D55C73775065842DC4A51797 /* PBXContainerItemProxy */;
 		};
+		C8D72D1B1BE79610DB905424 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2ADB11F6C1D51B9F9A9DB15F /* Klepon */;
+			targetProxy = C24CD5A7B8399776539D1FF4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2CE1783225D9E3351FDB458B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon.snapshot-tests";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Klepon.app/Klepon";
+			};
+			name = Release;
+		};
+		31056AAA3C7140EC9DD06895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon.snapshot-tests";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Klepon.app/Klepon";
+			};
+			name = Debug;
+		};
 		57B34C7365523CA3F80ED770 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
@@ -782,6 +889,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		116221FC6D50F33334387509 /* Build configuration list for PBXNativeTarget "KleponSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31056AAA3C7140EC9DD06895 /* Debug */,
+				2CE1783225D9E3351FDB458B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		8911E6C6F25C3A4F99870749 /* Build configuration list for PBXProject "Klepon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -803,6 +919,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		85B622113A5DC5A1BD2D123B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.2;
+			};
+		};
 		AD8C734FB461604D5793769C /* XCRemoteSwiftPackageReference "onde-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ondeinference/onde-swift";
@@ -814,6 +938,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		35214C3FF433B08C1C06C3F7 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B622113A5DC5A1BD2D123B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
 		855EE8DF62A7820E77C05D1A /* Onde */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD8C734FB461604D5793769C /* XCRemoteSwiftPackageReference "onde-swift" */;
