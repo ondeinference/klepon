@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Onde Inference — Required Reasons API declarations
+	  https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api
+
+	  These APIs are called by the Rust static library (mistral.rs / tokio / reqwest)
+	  embedded in OndeFramework.xcframework. None are used for tracking.
+
+	  Verified with:
+	    nm -u libonde-macos.a | grep -E "_sysctl|_stat|_mach_absolute|_gettimeofday"
+	-->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<!--
+		  sysctl / sysctlbyname / sysctlnametomib
+		  Used by: tokio (thread / CPU count), mistral.rs (hardware capability detection),
+		           sysinfo (memory pressure monitoring for model loading decisions).
+
+		  SystemBootTime — 35F9.1: Declare timestamp for measuring elapsed inference time.
+		-->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategorySystemBootTime</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>35F9.1</string>
+			</array>
+		</dict>
+		<!--
+		  sysctl (hw.memsize, hw.physicalcpu, hw.logicalcpu, hw.cpufrequency)
+		  Used by: mistral.rs / candle to size KV cache and choose quantisation level
+		  based on available RAM and CPU topology.
+
+		  DiskSpace — E174.1: Check available disk space before downloading model weights.
+		-->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryDiskSpace</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>E174.1</string>
+			</array>
+		</dict>
+		<!--
+		  stat / fstat / lstat / fstatat / fstatfs / fstatvfs
+		  Used by: hf-hub (checking whether a cached model file exists and is complete),
+		           tokio::fs (async file I/O underlying model weight streaming).
+
+		  FileTimestamp — C617.1: Read file modification timestamps to validate cached
+		  model files against the HuggingFace Hub manifest and avoid re-downloading
+		  unchanged weights.
+		-->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
