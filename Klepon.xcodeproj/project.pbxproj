@@ -143,7 +143,7 @@
 		4C77AF5EB4B17D087FA522F6 /* WatchContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentLoader.swift; sourceTree = "<group>"; };
 		52DD909BB2EF68103CB46EDA /* KleponActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponActionButton.swift; sourceTree = "<group>"; };
 		5AF291E9C2E66209377138E6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		5DE91827A635C0B0B72690EC /* Klepon.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Klepon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE91827A635C0B0B72690EC /* Klepon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klepon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6235AD6792F25476E2A508F0 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchStore.swift; sourceTree = "<group>"; };
 		67FAA69C42F1845ECB79AC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		9D6EFA021D4524508DA8E78C /* testGuideArtworkView.guide-artwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testGuideArtworkView.guide-artwork.png"; sourceTree = "<group>"; };
 		9E76510CC840CE068B0FC381 /* Klepon Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klepon Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4400AB0AB8D245325A00BA3 /* Klepon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Klepon.entitlements; sourceTree = "<group>"; };
-		A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KleponSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KleponSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E1C50BFBE2EF5F37941590 /* KleponMetadataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponMetadataRow.swift; sourceTree = "<group>"; };
 		AF79D8DD27B9CA485140C934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B02B0EA4B8BA09604D62A62B /* AnswerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCard.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponColor.swift; sourceTree = "<group>"; };
 		C82874C90A5FAA32D1B52EB7 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		CD520C870387E82E9A1533C2 /* KleponTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponTypography.swift; sourceTree = "<group>"; };
-		D53EA049112C7D59177F9878 /* Klepon Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klepon Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53EA049112C7D59177F9878 /* Klepon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klepon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDE2A1E73EB15970A17A894 /* KleponApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponApp.swift; sourceTree = "<group>"; };
 		E45070309D2C7058BAA44CD2 /* RecentlyViewedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewedStore.swift; sourceTree = "<group>"; };
 		E7E886BAB66E828950DBED52 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 		3F9369D339C14126AB44D720 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D53EA049112C7D59177F9878 /* Klepon Mac.app */,
+				D53EA049112C7D59177F9878 /* Klepon.app */,
 				9E76510CC840CE068B0FC381 /* Klepon Watch.app */,
 				5DE91827A635C0B0B72690EC /* Klepon.app */,
 				A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */,
@@ -497,7 +497,7 @@
 				35BDA28E3F43D5441C5FE932 /* Onde */,
 			);
 			productName = "Klepon Mac";
-			productReference = D53EA049112C7D59177F9878 /* Klepon Mac.app */;
+			productReference = D53EA049112C7D59177F9878 /* Klepon.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E8CEBF52617721AEE450A7CF /* Klepon Watch */ = {
