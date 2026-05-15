@@ -6,6 +6,16 @@ import XCTest
 
 @MainActor
 final class KleponSnapshotTests: XCTestCase {
+    override func invokeTest() {
+        if ProcessInfo.processInfo.environment["RECORD_SNAPSHOTS"] == "1" {
+            withSnapshotTesting(record: .all) {
+                super.invokeTest()
+            }
+        } else {
+            super.invokeTest()
+        }
+    }
+
     override func setUp() {
         super.setUp()
         continueAfterFailure = false

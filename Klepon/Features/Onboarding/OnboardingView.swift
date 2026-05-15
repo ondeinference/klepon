@@ -47,7 +47,7 @@ struct OnboardingView: View {
 
                 KleponCard {
                     onboardingPoint(
-                        title: "Private on your iPhone",
+                        title: "Private on your device",
                         detail:
                             "Private answers use a one-time on-device guide download. You can browse first and add it later.",
                         systemImage: "lock"
@@ -94,31 +94,44 @@ struct OnboardingView: View {
             .padding(.bottom, 180)
         }
         .background(KleponColor.background.ignoresSafeArea())
-        .safeAreaInset(edge: .bottom) {
-            VStack(spacing: 12) {
-                KleponActionButton(
-                    title: privateGuideButtonTitle,
-                    systemImage: "lock",
-                    isLoading: guideEngine.availability.isBusy,
-                    isDisabled: guideEngine.availability == .ready
-                ) {
-                    Task {
-                        await guideEngine.prepareIfNeeded(
-                            forceReload: guideEngine.availability.isFailure)
-                        if guideEngine.availability == .ready {
-                            onComplete()
-                        }
+        #if os(macOS)
+            .safeAreaInset(edge: .bottom) {
+                onboardingActions
+                .padding(.horizontal, 24)
+                .padding(.vertical, 16)
+                .background(KleponColor.background)
+            }
+        #else
+            .safeAreaInset(edge: .bottom) {
+                onboardingActions
+                .padding(.horizontal, 24)
+                .padding(.top, 12)
+                .padding(.bottom, 16)
+                .background(.ultraThinMaterial)
+            }
+        #endif
+    }
+
+    private var onboardingActions: some View {
+        VStack(spacing: 12) {
+            KleponActionButton(
+                title: privateGuideButtonTitle,
+                systemImage: "lock",
+                isLoading: guideEngine.availability.isBusy,
+                isDisabled: guideEngine.availability == .ready
+            ) {
+                Task {
+                    await guideEngine.prepareIfNeeded(
+                        forceReload: guideEngine.availability.isFailure)
+                    if guideEngine.availability == .ready {
+                        onComplete()
                     }
                 }
-
-                KleponActionButton(title: "Browse first", tone: .secondary) {
-                    onBrowseFirst()
-                }
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 12)
-            .padding(.bottom, 16)
-            .background(.ultraThinMaterial)
+
+            KleponActionButton(title: "Browse first", tone: .secondary) {
+                onBrowseFirst()
+            }
         }
     }
 

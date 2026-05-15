@@ -57,7 +57,7 @@ struct SettingsView: View {
 
                         if guideEngine.storageUsedDescription != "Not downloaded yet" {
                             KleponActionButton(
-                                title: "Remove private guide from this iPhone",
+                                title: "Remove private guide from this device",
                                 systemImage: "trash",
                                 tone: .secondary
                             ) {
@@ -169,7 +169,7 @@ struct SettingsView: View {
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Settings")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .kleponPrimaryAction) {
                 Button("Done") {
                     dismiss()
                 }

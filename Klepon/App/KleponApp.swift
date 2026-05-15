@@ -12,7 +12,12 @@ struct KleponApp: App {
                 .environmentObject(appState.recentSearchStore)
                 .environmentObject(appState.recentlyViewedStore)
                 .environmentObject(appState.guideEngine)
-                .preferredColorScheme(.light)
+                #if os(iOS)
+                    .preferredColorScheme(.light)
+                #endif
         }
+        #if os(macOS)
+            .defaultSize(width: 1100, height: 760)
+        #endif
     }
 }

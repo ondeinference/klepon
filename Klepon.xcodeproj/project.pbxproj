@@ -8,49 +8,90 @@
 
 /* Begin PBXBuildFile section */
 		019B658F26ABE2706231EC9E /* GuideEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A0935AE4B398B281758834 /* GuideEntry.swift */; };
+		032AFB30CAB4E8A31CDC897D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E886BAB66E828950DBED52 /* SearchView.swift */; };
 		03D16A2386EB68FED8D92D52 /* GuideEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A0935AE4B398B281758834 /* GuideEntry.swift */; };
 		05BF0404B7030EDCD3D8C357 /* GuideArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2850226B4B05FF758C1F93 /* GuideArtworkView.swift */; };
+		0709F0B92923D97F6859275A /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235AD6792F25476E2A508F0 /* SearchService.swift */; };
 		0977CD6BFFDBDBE3B7795924 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FDDB0F88FF430ABD679AD89 /* collections.json */; };
 		0CE2632DF6FB02163D55BB65 /* Klepon Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9E76510CC840CE068B0FC381 /* Klepon Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D685E35EE50C926DC6FBE4C /* KleponChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C4F3C8688072191AA16C6 /* KleponChip.swift */; };
 		0E69E79C5FADF1633FE3D63F /* KleponColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */; };
 		14B7CE6E6A0EB12B709F7B55 /* KleponTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD520C870387E82E9A1533C2 /* KleponTypography.swift */; };
 		1704DDB60B1E23057C0E1094 /* GuideAnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3719031080B59898133810F7 /* GuideAnswerService.swift */; };
+		1879460ECC35F3386E8E6109 /* KleponChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C4F3C8688072191AA16C6 /* KleponChip.swift */; };
 		19E282A6347C588E17778195 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4545DC84863788D55B94D31A /* DiscoverView.swift */; };
 		1E7AAEA8007BFE4ED6FE4892 /* WatchContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77AF5EB4B17D087FA522F6 /* WatchContentLoader.swift */; };
 		1F95A454A641C829BD304A89 /* GuideCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C0DB3BD620AD9F55B7631 /* GuideCollection.swift */; };
 		1FF490E985C31BB08DA29AFF /* guide_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = 248F359109A08A60F792C42D /* guide_entries.json */; };
 		200AE94E7E7E73B5C83869DD /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0C4C22A5134DB058E41F4 /* FavoritesStore.swift */; };
+		215C4D8A2B2ABF2C3C11C163 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8870F09A11EA6D3F0108DA4D /* SystemConfiguration.framework */; };
 		23E22EC56BE48A20BD1229F7 /* AnswerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B0EA4B8BA09604D62A62B /* AnswerCard.swift */; };
 		2AB57009245E1BABD1156AFA /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541983FF7CE190C0663294D /* GuideDetailView.swift */; };
+		2AD05B0B7ED109134F013862 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B5E3D9A1906C2FED3032 /* EmptyStateView.swift */; };
+		2F3047F5078C4526133CB848 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13418896CA28250CEEE7592E /* OnboardingView.swift */; };
 		3349FB46691C944112401D6E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E152344B39D1D77F1B3943 /* SettingsView.swift */; };
+		35B5508906432B3EFE26F4FF /* PlatformViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D6F97615398D511673B98 /* PlatformViewSupport.swift */; };
+		35D43509610D0E2CB3DBD2BB /* testEmptyStateView.saved-empty-state.png in Resources */ = {isa = PBXBuildFile; fileRef = 943670F01925DE3065B92636 /* testEmptyStateView.saved-empty-state.png */; };
 		36AA193A3B7EF7CB25B6E0BE /* KleponWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFBF98118F066D3C7FA14B2 /* KleponWatchApp.swift */; };
+		37A723A15D19B7DE3DD92B25 /* PlatformViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D6F97615398D511673B98 /* PlatformViewSupport.swift */; };
+		37BD5B2A275426143819B70D /* OndeGuideEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D53A5F9D5897E15506C20 /* OndeGuideEngine.swift */; };
+		3A6F67743964C4D04893C321 /* RecentlyViewedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45070309D2C7058BAA44CD2 /* RecentlyViewedStore.swift */; };
+		3F999E04650931C2019BDA17 /* KleponColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */; };
 		41F8E173B82809AF87E1B297 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13418896CA28250CEEE7592E /* OnboardingView.swift */; };
+		43ABAA3C08695B7C8FEE7324 /* KleponMetadataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1C50BFBE2EF5F37941590 /* KleponMetadataRow.swift */; };
 		4609C70D9FB74C55B9DBE832 /* KleponActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD909BB2EF68103CB46EDA /* KleponActionButton.swift */; };
 		478FFEBDAA7729189B429A6D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E886BAB66E828950DBED52 /* SearchView.swift */; };
+		47B632AF6BF3E25AF628CC01 /* Onde in Frameworks */ = {isa = PBXBuildFile; productRef = 35BDA28E3F43D5441C5FE932 /* Onde */; };
 		4D63E231AC9630B2C225DF22 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBB4F5D4C98D036AC52E193 /* WatchHomeView.swift */; };
+		5692BBCE950885C5C1193DDF /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FDDB0F88FF430ABD679AD89 /* collections.json */; };
+		5808C4539EBB98D822BDE99F /* KleponActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD909BB2EF68103CB46EDA /* KleponActionButton.swift */; };
 		67368394088AA3045EBA14A5 /* OndeEnvironmentBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B499D3BF7AC80D31907D87F /* OndeEnvironmentBootstrap.swift */; };
+		687418866BCC5554A0F4BFDC /* AnswerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B0EA4B8BA09604D62A62B /* AnswerCard.swift */; };
+		72A88C81BE80344130E0EC0C /* GuideAnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3719031080B59898133810F7 /* GuideAnswerService.swift */; };
+		7C90532B70C1C4840E49A92B /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541983FF7CE190C0663294D /* GuideDetailView.swift */; };
 		7F1E744AAE60BF1FB132D66C /* KleponCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C58098969278A542893F3 /* KleponCard.swift */; };
 		8401F9C0FA140DC2CF8BA248 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF291E9C2E66209377138E6 /* AppState.swift */; };
 		8804CFBAD707E1FED63BF214 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235AD6792F25476E2A508F0 /* SearchService.swift */; };
 		88984B6A8AA504AD200A7F39 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FDDB0F88FF430ABD679AD89 /* collections.json */; };
+		889CBF2AF84AABF8012EE737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79D8DD27B9CA485140C934 /* Assets.xcassets */; };
+		895B5369E9CF1E1B26CDF40E /* KleponTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD520C870387E82E9A1533C2 /* KleponTypography.swift */; };
+		8EBCC9FA074785FDD82B02E5 /* KleponApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE2A1E73EB15970A17A894 /* KleponApp.swift */; };
 		910A84B3F28B3F79871FF60E /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438ECC335175B18778C682 /* SectionHeader.swift */; };
 		926AB007EBCD5315EE77E2A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79D8DD27B9CA485140C934 /* Assets.xcassets */; };
+		93E938AA978ABF5665737887 /* GuideEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A0935AE4B398B281758834 /* GuideEntry.swift */; };
+		955D039F4B5D14FCA4E7F2B2 /* GuideArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2850226B4B05FF758C1F93 /* GuideArtworkView.swift */; };
 		99071E0CB9F44857C0BFC8C9 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA2E425D5454602F78D628 /* SavedView.swift */; };
+		9E16F5C37F30B58441780260 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4545DC84863788D55B94D31A /* DiscoverView.swift */; };
 		9ECA989E9DCDF08A2D7C29A3 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82874C90A5FAA32D1B52EB7 /* AppRootView.swift */; };
+		9ECEB59572D3B9D08D1DA896 /* GuideCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C0DB3BD620AD9F55B7631 /* GuideCollection.swift */; };
 		A54D028D8F35FE002B0ACA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054656155630B064F785B0D7 /* Assets.xcassets */; };
 		A7001D58E0F2B1BD5F52FF8A /* Onde in Frameworks */ = {isa = PBXBuildFile; productRef = 855EE8DF62A7820E77C05D1A /* Onde */; };
 		B1F1D1A453150D3BBB0146EF /* RecentlyViewedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45070309D2C7058BAA44CD2 /* RecentlyViewedStore.swift */; };
 		B34377720179454F9B9184C5 /* OndeGuideEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D53A5F9D5897E15506C20 /* OndeGuideEngine.swift */; };
+		B4467AA7214B4990D2FC19DA /* KleponCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C58098969278A542893F3 /* KleponCard.swift */; };
+		B768150B02B19417B81FE651 /* guide_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = 248F359109A08A60F792C42D /* guide_entries.json */; };
 		B7DE9EC8BE998E6719C88E83 /* guide_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = 248F359109A08A60F792C42D /* guide_entries.json */; };
+		BB70FAD944544125AF261F7C /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA2E425D5454602F78D628 /* SavedView.swift */; };
+		C15131992039B3AC7DB74DAB /* testGuideArtworkView.guide-artwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6EFA021D4524508DA8E78C /* testGuideArtworkView.guide-artwork.png */; };
 		C2EA2682A6545802C06E00CC /* WatchBrandSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E7D4050D471955FF3AB13 /* WatchBrandSystem.swift */; };
 		C709C82E7F0BCF398BCD9C2F /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2891A1AFBB59928FC5B1E66 /* ContentRepository.swift */; };
+		D6D8A42930EA9A0EA6622108 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF291E9C2E66209377138E6 /* AppState.swift */; };
 		D99AAE1CDE51139840A52607 /* KleponMetadataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1C50BFBE2EF5F37941590 /* KleponMetadataRow.swift */; };
 		DA915BA8B2F732E7D62CF936 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7B5E3D9A1906C2FED3032 /* EmptyStateView.swift */; };
 		E45F257E3D35DC565B21B299 /* KleponColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */; };
 		E599CCDB1FE5331C4A1EB6C6 /* KleponSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E92BBAF958F5882F17C37 /* KleponSnapshotTests.swift */; };
+		E87F8A08D6922557A5DBD198 /* testOnboardingView_defaultState.default.png in Resources */ = {isa = PBXBuildFile; fileRef = 414FD1A8945B820DCC4ED192 /* testOnboardingView_defaultState.default.png */; };
+		ECDD606D8AFA776765AA9A31 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438ECC335175B18778C682 /* SectionHeader.swift */; };
+		EE2103530984735318E469FD /* AskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6E7DC56DD8E1459EFC892 /* AskSheetView.swift */; };
 		EE88AEC7059BB2639687FECF /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 35214C3FF433B08C1C06C3F7 /* SnapshotTesting */; };
+		F0694A813D1CB57F0B5C0F65 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0C4C22A5134DB058E41F4 /* FavoritesStore.swift */; };
 		F1431179B54CEB23FFFCB2AE /* KleponApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE2A1E73EB15970A17A894 /* KleponApp.swift */; };
+		F2D905B433B0B76CE6B4001F /* OndeEnvironmentBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B499D3BF7AC80D31907D87F /* OndeEnvironmentBootstrap.swift */; };
+		F46EB4EDFFF125ED88506D89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B67BCC5A459288FB240C6E7 /* Info.plist */; };
+		F5B35C6C771073CE32B4BFD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E152344B39D1D77F1B3943 /* SettingsView.swift */; };
+		F87EF3C291B7D3FB9BE8E43A /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2891A1AFBB59928FC5B1E66 /* ContentRepository.swift */; };
+		F88972525510344E63D2983C /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82874C90A5FAA32D1B52EB7 /* AppRootView.swift */; };
+		F9D6FC75A11BE98BD28BBDC2 /* RecentSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */; };
 		FA423A76BE098A9911044246 /* AskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6E7DC56DD8E1459EFC892 /* AskSheetView.swift */; };
 		FD0E1BA888E3CE73875D58FF /* RecentSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D52BCEDF66CC8FE8A1234 /* RecentSearchStore.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +137,7 @@
 		248F359109A08A60F792C42D /* guide_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = guide_entries.json; sourceTree = "<group>"; };
 		2B499D3BF7AC80D31907D87F /* OndeEnvironmentBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OndeEnvironmentBootstrap.swift; sourceTree = "<group>"; };
 		3719031080B59898133810F7 /* GuideAnswerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideAnswerService.swift; sourceTree = "<group>"; };
+		414FD1A8945B820DCC4ED192 /* testOnboardingView_defaultState.default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testOnboardingView_defaultState.default.png; sourceTree = "<group>"; };
 		42E152344B39D1D77F1B3943 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4545DC84863788D55B94D31A /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		4C77AF5EB4B17D087FA522F6 /* WatchContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentLoader.swift; sourceTree = "<group>"; };
@@ -112,7 +154,10 @@
 		7F2850226B4B05FF758C1F93 /* GuideArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideArtworkView.swift; sourceTree = "<group>"; };
 		85E7B5E3D9A1906C2FED3032 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		868C58098969278A542893F3 /* KleponCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponCard.swift; sourceTree = "<group>"; };
+		8870F09A11EA6D3F0108DA4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		943670F01925DE3065B92636 /* testEmptyStateView.saved-empty-state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testEmptyStateView.saved-empty-state.png"; sourceTree = "<group>"; };
 		98AA2E425D5454602F78D628 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		9D6EFA021D4524508DA8E78C /* testGuideArtworkView.guide-artwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testGuideArtworkView.guide-artwork.png"; sourceTree = "<group>"; };
 		9E76510CC840CE068B0FC381 /* Klepon Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klepon Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4400AB0AB8D245325A00BA3 /* Klepon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Klepon.entitlements; sourceTree = "<group>"; };
 		A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KleponSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +170,7 @@
 		C675ABBBA25BBA25A8DE29BE /* KleponColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponColor.swift; sourceTree = "<group>"; };
 		C82874C90A5FAA32D1B52EB7 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		CD520C870387E82E9A1533C2 /* KleponTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponTypography.swift; sourceTree = "<group>"; };
+		D53EA049112C7D59177F9878 /* Klepon Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klepon Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDE2A1E73EB15970A17A894 /* KleponApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KleponApp.swift; sourceTree = "<group>"; };
 		E45070309D2C7058BAA44CD2 /* RecentlyViewedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewedStore.swift; sourceTree = "<group>"; };
 		E7E886BAB66E828950DBED52 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -132,10 +178,20 @@
 		EEC6E7DC56DD8E1459EFC892 /* AskSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskSheetView.swift; sourceTree = "<group>"; };
 		F17C0DB3BD620AD9F55B7631 /* GuideCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollection.swift; sourceTree = "<group>"; };
 		F2891A1AFBB59928FC5B1E66 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
+		F51D6F97615398D511673B98 /* PlatformViewSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewSupport.swift; sourceTree = "<group>"; };
 		FC438ECC335175B18778C682 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B0052635A882F0E996B81154 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47B632AF6BF3E25AF628CC01 /* Onde in Frameworks */,
+				215C4D8A2B2ABF2C3C11C163 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B161A429683CBAD2A984A5AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,9 +227,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		2D223E83C424037A62CA358F /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				89DF9DC044BB33376803C6F5 /* KleponSnapshotTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
 		3F9369D339C14126AB44D720 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				D53EA049112C7D59177F9878 /* Klepon Mac.app */,
 				9E76510CC840CE068B0FC381 /* Klepon Watch.app */,
 				5DE91827A635C0B0B72690EC /* Klepon.app */,
 				A48AC0E39277DEFCE5D103CC /* KleponSnapshotTests.xctest */,
@@ -246,6 +311,7 @@
 				C82874C90A5FAA32D1B52EB7 /* AppRootView.swift */,
 				5AF291E9C2E66209377138E6 /* AppState.swift */,
 				DEDE2A1E73EB15970A17A894 /* KleponApp.swift */,
+				F51D6F97615398D511673B98 /* PlatformViewSupport.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -254,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				759E92BBAF958F5882F17C37 /* KleponSnapshotTests.swift */,
+				2D223E83C424037A62CA358F /* __Snapshots__ */,
 			);
 			path = KleponSnapshotTests;
 			sourceTree = "<group>";
@@ -284,6 +351,16 @@
 				C0A0935AE4B398B281758834 /* GuideEntry.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		89DF9DC044BB33376803C6F5 /* KleponSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				943670F01925DE3065B92636 /* testEmptyStateView.saved-empty-state.png */,
+				9D6EFA021D4524508DA8E78C /* testGuideArtworkView.guide-artwork.png */,
+				414FD1A8945B820DCC4ED192 /* testOnboardingView_defaultState.default.png */,
+			);
+			path = KleponSnapshotTests;
 			sourceTree = "<group>";
 		};
 		8FCB4D289A8BA31F1213435D /* Resources */ = {
@@ -346,6 +423,7 @@
 				EA4DFA44FE8BB01979ADB187 /* Klepon */,
 				825A58FCE091C3FE902D3131 /* KleponSnapshotTests */,
 				472BF5D47BEE4AF1EC80B645 /* KleponWatch */,
+				EC85AFC077F4445CA6E5B876 /* Frameworks */,
 				3F9369D339C14126AB44D720 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -365,6 +443,14 @@
 				8FCB4D289A8BA31F1213435D /* Resources */,
 			);
 			path = Klepon;
+			sourceTree = "<group>";
+		};
+		EC85AFC077F4445CA6E5B876 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8870F09A11EA6D3F0108DA4D /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +479,27 @@
 			productReference = 5DE91827A635C0B0B72690EC /* Klepon.app */;
 			productType = "com.apple.product-type.application";
 		};
+		676CA86C78E7DB801DEEAF12 /* Klepon Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78899F7C62A9675700D42C5A /* Build configuration list for PBXNativeTarget "Klepon Mac" */;
+			buildPhases = (
+				625CD4834F7E62F4BCE58404 /* Sources */,
+				667705EEBEDEBBCA43E94EAC /* Resources */,
+				B0052635A882F0E996B81154 /* Frameworks */,
+				38259E5F7F0F32D684AE509A /* Update CFBundleVersion */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Klepon Mac";
+			packageProductDependencies = (
+				35BDA28E3F43D5441C5FE932 /* Onde */,
+			);
+			productName = "Klepon Mac";
+			productReference = D53EA049112C7D59177F9878 /* Klepon Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E8CEBF52617721AEE450A7CF /* Klepon Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07A758477E97CF9254DDBA82 /* Build configuration list for PBXNativeTarget "Klepon Watch" */;
@@ -417,6 +524,7 @@
 			buildConfigurationList = 116221FC6D50F33334387509 /* Build configuration list for PBXNativeTarget "KleponSnapshotTests" */;
 			buildPhases = (
 				C2B1B8ADEE7B8E2628B90D1F /* Sources */,
+				6F8A4C98AF649CB41F0837B3 /* Resources */,
 				B161A429683CBAD2A984A5AE /* Frameworks */,
 			);
 			buildRules = (
@@ -442,6 +550,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					2ADB11F6C1D51B9F9A9DB15F = {
+						ProvisioningStyle = Automatic;
+					};
+					676CA86C78E7DB801DEEAF12 = {
 						ProvisioningStyle = Automatic;
 					};
 					E8CEBF52617721AEE450A7CF = {
@@ -471,6 +582,7 @@
 			projectRoot = "";
 			targets = (
 				2ADB11F6C1D51B9F9A9DB15F /* Klepon */,
+				676CA86C78E7DB801DEEAF12 /* Klepon Mac */,
 				E8CEBF52617721AEE450A7CF /* Klepon Watch */,
 				F10E9562BA0BE60A7E000DB0 /* KleponSnapshotTests */,
 			);
@@ -488,6 +600,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		667705EEBEDEBBCA43E94EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				889CBF2AF84AABF8012EE737 /* Assets.xcassets in Resources */,
+				F46EB4EDFFF125ED88506D89 /* Info.plist in Resources */,
+				5692BBCE950885C5C1193DDF /* collections.json in Resources */,
+				B768150B02B19417B81FE651 /* guide_entries.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F8A4C98AF649CB41F0837B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35D43509610D0E2CB3DBD2BB /* testEmptyStateView.saved-empty-state.png in Resources */,
+				C15131992039B3AC7DB74DAB /* testGuideArtworkView.guide-artwork.png in Resources */,
+				E87F8A08D6922557A5DBD198 /* testOnboardingView_defaultState.default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC5A6BBAFB4A1B61000065D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +635,26 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		005255530CCC905544DBE9A8 /* Update CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update CFBundleVersion";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\nSHARED_BUNDLE_VERSION_FILE=\"${BUILD_DIR}/klepon-cfbundleversion.txt\"\nif [ -f \"${SHARED_BUNDLE_VERSION_FILE}\" ]; then\n  BUNDLE_VERSION=\"$(cat \"${SHARED_BUNDLE_VERSION_FILE}\")\"\nelse\n  BUNDLE_VERSION=\"$(date -u +\"%Y%m%d.%H%M\")\"\n  printf '%s' \"${BUNDLE_VERSION}\" > \"${SHARED_BUNDLE_VERSION_FILE}\"\nfi\n\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\nif [ ! -f \"${INFO_PLIST}\" ]; then\n  echo \"error: Info.plist not found at ${INFO_PLIST}\"\n  exit 1\nfi\n\nif ! /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUNDLE_VERSION}\" \"${INFO_PLIST}\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleVersion string ${BUNDLE_VERSION}\" \"${INFO_PLIST}\"\nfi\n\necho \"Updated CFBundleVersion to ${BUNDLE_VERSION}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38259E5F7F0F32D684AE509A /* Update CFBundleVersion */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -571,6 +724,7 @@
 				41F8E173B82809AF87E1B297 /* OnboardingView.swift in Sources */,
 				67368394088AA3045EBA14A5 /* OndeEnvironmentBootstrap.swift in Sources */,
 				B34377720179454F9B9184C5 /* OndeGuideEngine.swift in Sources */,
+				37A723A15D19B7DE3DD92B25 /* PlatformViewSupport.swift in Sources */,
 				FD0E1BA888E3CE73875D58FF /* RecentSearchStore.swift in Sources */,
 				B1F1D1A453150D3BBB0146EF /* RecentlyViewedStore.swift in Sources */,
 				99071E0CB9F44857C0BFC8C9 /* SavedView.swift in Sources */,
@@ -591,6 +745,44 @@
 				C2EA2682A6545802C06E00CC /* WatchBrandSystem.swift in Sources */,
 				1E7AAEA8007BFE4ED6FE4892 /* WatchContentLoader.swift in Sources */,
 				4D63E231AC9630B2C225DF22 /* WatchHomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		625CD4834F7E62F4BCE58404 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				687418866BCC5554A0F4BFDC /* AnswerCard.swift in Sources */,
+				F88972525510344E63D2983C /* AppRootView.swift in Sources */,
+				D6D8A42930EA9A0EA6622108 /* AppState.swift in Sources */,
+				EE2103530984735318E469FD /* AskSheetView.swift in Sources */,
+				F87EF3C291B7D3FB9BE8E43A /* ContentRepository.swift in Sources */,
+				9E16F5C37F30B58441780260 /* DiscoverView.swift in Sources */,
+				2AD05B0B7ED109134F013862 /* EmptyStateView.swift in Sources */,
+				F0694A813D1CB57F0B5C0F65 /* FavoritesStore.swift in Sources */,
+				72A88C81BE80344130E0EC0C /* GuideAnswerService.swift in Sources */,
+				955D039F4B5D14FCA4E7F2B2 /* GuideArtworkView.swift in Sources */,
+				9ECEB59572D3B9D08D1DA896 /* GuideCollection.swift in Sources */,
+				7C90532B70C1C4840E49A92B /* GuideDetailView.swift in Sources */,
+				93E938AA978ABF5665737887 /* GuideEntry.swift in Sources */,
+				5808C4539EBB98D822BDE99F /* KleponActionButton.swift in Sources */,
+				8EBCC9FA074785FDD82B02E5 /* KleponApp.swift in Sources */,
+				B4467AA7214B4990D2FC19DA /* KleponCard.swift in Sources */,
+				1879460ECC35F3386E8E6109 /* KleponChip.swift in Sources */,
+				3F999E04650931C2019BDA17 /* KleponColor.swift in Sources */,
+				43ABAA3C08695B7C8FEE7324 /* KleponMetadataRow.swift in Sources */,
+				895B5369E9CF1E1B26CDF40E /* KleponTypography.swift in Sources */,
+				2F3047F5078C4526133CB848 /* OnboardingView.swift in Sources */,
+				F2D905B433B0B76CE6B4001F /* OndeEnvironmentBootstrap.swift in Sources */,
+				37BD5B2A275426143819B70D /* OndeGuideEngine.swift in Sources */,
+				35B5508906432B3EFE26F4FF /* PlatformViewSupport.swift in Sources */,
+				F9D6FC75A11BE98BD28BBDC2 /* RecentSearchStore.swift in Sources */,
+				3A6F67743964C4D04893C321 /* RecentlyViewedStore.swift in Sources */,
+				BB70FAD944544125AF261F7C /* SavedView.swift in Sources */,
+				0709F0B92923D97F6859275A /* SearchService.swift in Sources */,
+				032AFB30CAB4E8A31CDC897D /* SearchView.swift in Sources */,
+				ECDD606D8AFA776765AA9A31 /* SectionHeader.swift in Sources */,
+				F5B35C6C771073CE32B4BFD1 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +876,56 @@
 			};
 			name = Debug;
 		};
+		73320483BA240362017C25C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconMac;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=macosx*]" = x86_64;
+				INFOPLIST_FILE = KleponMac/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Splitfire AB";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon.mac;
+				PRODUCT_NAME = Klepon;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		812F1D8D209CC3C18A9DC330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B09D700AA047E07E91F6A2 /* Signing.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconMac;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=macosx*]" = x86_64;
+				INFOPLIST_FILE = KleponMac/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Splitfire AB";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon.mac;
+				PRODUCT_NAME = Klepon;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
 		850753164F664131E0E37EAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -730,6 +972,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -842,6 +1085,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -898,6 +1142,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		78899F7C62A9675700D42C5A /* Build configuration list for PBXNativeTarget "Klepon Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73320483BA240362017C25C8 /* Debug */,
+				812F1D8D209CC3C18A9DC330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		8911E6C6F25C3A4F99870749 /* Build configuration list for PBXProject "Klepon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -942,6 +1195,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 85B622113A5DC5A1BD2D123B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		35BDA28E3F43D5441C5FE932 /* Onde */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD8C734FB461604D5793769C /* XCRemoteSwiftPackageReference "onde-swift" */;
+			productName = Onde;
 		};
 		855EE8DF62A7820E77C05D1A /* Onde */ = {
 			isa = XCSwiftPackageProductDependency;

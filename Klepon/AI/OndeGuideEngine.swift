@@ -15,11 +15,11 @@ enum PrivateGuideAvailability: Equatable {
         case .notInstalled:
             return "Private guide not ready yet"
         case .downloaded:
-            return "Private guide downloaded on this iPhone"
+            return "Private guide downloaded on this device"
         case .preparing:
             return "Preparing your private guide"
         case .ready:
-            return "Private guide ready on this iPhone"
+            return "Private guide ready on this device"
         case .answering:
             return "Answering privately"
         case .failed:
@@ -34,10 +34,10 @@ enum PrivateGuideAvailability: Equatable {
                 "You can browse everything first, then add a one-time private guide download whenever you want deeper follow-up answers."
         case .downloaded:
             return
-                "The private guide is already stored on this iPhone. Finish preparing it when you want faster follow-up answers in the app."
+                "The private guide is already stored on this device. Finish preparing it when you want faster follow-up answers in the app."
         case .preparing:
             return
-                "The first run can take a while because Klepon needs to download and load the private guide locally on your iPhone."
+                "The first run can take a while because Klepon needs to download and load the private guide locally on your device."
         case .ready:
             return
                 "Klepon can now answer follow-up questions privately without turning the app into a generic chat shell."

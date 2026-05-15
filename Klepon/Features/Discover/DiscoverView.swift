@@ -19,7 +19,7 @@ struct DiscoverView: View {
     }
 
     private var featuredTasteNotes: [String] {
-        ["Private on your iPhone", "Curated first", "Warm follow-up answers"]
+        ["Private on your device", "Curated first", "Warm follow-up answers"]
     }
 
     private var recentlyViewedEntries: [GuideEntry] {
@@ -104,9 +104,9 @@ struct DiscoverView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Klepon")
-        .navigationBarTitleDisplayMode(.large)
+        .kleponLargeNavigationTitle()
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .kleponPrimaryAction) {
                 Button {
                     showingSettings = true
                 } label: {
@@ -125,7 +125,7 @@ struct DiscoverView: View {
                     .foregroundStyle(KleponColor.textPrimary)
 
                 Text(
-                    "Explore dishes, ingredients, and food traditions with a guide that feels calm, personal, and private on your iPhone."
+                    "Explore dishes, ingredients, and food traditions with a guide that feels calm, personal, and private on your device."
                 )
                 .font(KleponTypography.body)
                 .foregroundStyle(KleponColor.textSecondary)

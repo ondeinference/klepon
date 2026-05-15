@@ -45,8 +45,11 @@ struct AppRootView: View {
             NavigationStack {
                 SettingsView()
             }
+            #if os(macOS)
+                .frame(minWidth: 480, minHeight: 620)
+            #endif
         }
-        .fullScreenCover(isPresented: $showingOnboarding) {
+        .kleponOnboardingPresentation(isPresented: $showingOnboarding) {
             OnboardingView(
                 onBrowseFirst: {
                     appState.completeOnboarding()
@@ -55,6 +58,9 @@ struct AppRootView: View {
                     appState.completeOnboarding()
                 }
             )
+            #if os(macOS)
+                .frame(minWidth: 640, minHeight: 760)
+            #endif
         }
         .task {
             showingOnboarding = !appState.hasCompletedOnboarding
@@ -63,5 +69,8 @@ struct AppRootView: View {
         .onChange(of: appState.hasCompletedOnboarding) { _, newValue in
             showingOnboarding = !newValue
         }
+        #if os(macOS)
+            .frame(minWidth: 980, minHeight: 720)
+        #endif
     }
 }
