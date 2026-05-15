@@ -6,6 +6,7 @@ This folder keeps the App Store-facing copy and planning docs for Klepon.
 
 - `metadata/en-US/` — English metadata copy
 - `screenshots/iphone/` — iPhone screenshot exports
+- `screenshots/macos/` — macOS screenshot exports
 - `screenshots/watch/` — watchOS screenshot exports
 - `screenshots/README.md` — screenshot shot list and titles
 - `testflight-checklist.md` — pre-TestFlight checklist

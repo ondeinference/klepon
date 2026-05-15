@@ -87,7 +87,6 @@
 		F0694A813D1CB57F0B5C0F65 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0C4C22A5134DB058E41F4 /* FavoritesStore.swift */; };
 		F1431179B54CEB23FFFCB2AE /* KleponApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE2A1E73EB15970A17A894 /* KleponApp.swift */; };
 		F2D905B433B0B76CE6B4001F /* OndeEnvironmentBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B499D3BF7AC80D31907D87F /* OndeEnvironmentBootstrap.swift */; };
-		F46EB4EDFFF125ED88506D89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B67BCC5A459288FB240C6E7 /* Info.plist */; };
 		F5B35C6C771073CE32B4BFD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E152344B39D1D77F1B3943 /* SettingsView.swift */; };
 		F87EF3C291B7D3FB9BE8E43A /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2891A1AFBB59928FC5B1E66 /* ContentRepository.swift */; };
 		F88972525510344E63D2983C /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82874C90A5FAA32D1B52EB7 /* AppRootView.swift */; };
@@ -605,7 +604,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				889CBF2AF84AABF8012EE737 /* Assets.xcassets in Resources */,
-				F46EB4EDFFF125ED88506D89 /* Info.plist in Resources */,
 				5692BBCE950885C5C1193DDF /* collections.json in Resources */,
 				B768150B02B19417B81FE651 /* guide_entries.json in Resources */,
 			);
@@ -882,7 +880,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconMac;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = KleponMac/KleponMac.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -907,7 +905,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconMac;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = KleponMac/KleponMac.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

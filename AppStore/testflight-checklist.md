@@ -12,6 +12,7 @@
 
 - [ ] iPhone target builds on simulator
 - [ ] iPhone target runs on a real device
+- [ ] macOS target builds on the release Xcode version
 - [ ] Watch target builds on simulator
 - [ ] Watch target runs with the paired iPhone app
 - [ ] Private guide setup succeeds on a real device
@@ -36,3 +37,4 @@
 - [ ] No signing secrets or local credentials are in Git diff
 - [ ] No local machine junk files are staged
 - [ ] Bundle identifiers and App Group values are intentional for the release build
+- [ ] macOS release signing uses the sandboxed entitlements file
