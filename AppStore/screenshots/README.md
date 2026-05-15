@@ -15,6 +15,15 @@
 6. `Save what you want to try next`
    - Show the Saved screen with a short personal list.
 
+## macOS screenshots
+
+1. `A calm guide on your Mac`
+   - Show the Discover screen in the desktop window with the featured card and collections visible.
+2. `Search and save dishes from one place`
+   - Show a desktop-sized Search or Saved view with a realistic personal shortlist.
+3. `Ask privately on device`
+   - Show the ask flow with a grounded answer card and source chips.
+
 ## Apple Watch screenshots
 
 1. `Browse on your wrist`

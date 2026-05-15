@@ -27,6 +27,17 @@ struct AskSheetView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
+                #if os(macOS)
+                    HStack {
+                        Spacer()
+
+                        Button("Close") {
+                            dismiss()
+                        }
+                        .keyboardShortcut(.cancelAction)
+                    }
+                #endif
+
                 KleponCard {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Ask privately about \(entry.title)")
@@ -161,9 +172,10 @@ struct AskSheetView: View {
         .kleponInlineNavigationTitle()
         .toolbar {
             ToolbarItem(placement: .kleponPrimaryAction) {
-                Button("Done") {
+                Button("Close") {
                     dismiss()
                 }
+                .keyboardShortcut(.cancelAction)
                 .tint(KleponColor.accent)
             }
         }

@@ -170,12 +170,23 @@ targets:
     platform: macOS
     sources:
       - path: Klepon
+        excludes:
+          - Info.plist
+          - Klepon.entitlements
     info:
       path: KleponMac/Info.plist
       properties:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
         LSApplicationCategoryType: public.app-category.food-and-drink
+    entitlements:
+      path: KleponMac/KleponMac.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - group.com.ondeinference.apps
     configFiles:
       Debug: Configs/Signing.xcconfig
       Release: Configs/Signing.xcconfig
@@ -213,14 +224,13 @@ targets:
           echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.mac
+        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
         PRODUCT_NAME: Klepon
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: 1
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIconMac
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
-        CODE_SIGN_ENTITLEMENTS: ""
         INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 Splitfire AB"
         "EXCLUDED_ARCHS[sdk=macosx*]": x86_64
       configs:

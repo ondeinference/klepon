@@ -16,6 +16,7 @@ Klepon is a small SwiftUI guide to Indonesian dishes, ingredients, and food trad
 - curated local content
 - private on-device follow-up answers with [Onde Inference](https://ondeinference.com)
 - search, saved items, and recently viewed
+- native macOS app support
 - watchOS companion support
 
 ## Repo
@@ -34,6 +35,11 @@ iOS simulator:
 xcodebuild -project Klepon.xcodeproj -scheme Klepon -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
+macOS:
+```/dev/null/sh#L1-1
+xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Mac' -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build
+```
+
 watchOS simulator:
 ```/dev/null/sh#L1-1
 xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Watch' -destination 'generic/platform=watchOS Simulator' CODE_SIGNING_ALLOWED=NO build
@@ -47,6 +53,8 @@ python3 Scripts/validate_content.py
 ## Signing
 
 If you run your own fork, change the bundle identifier and App Group to values you control.
+
+The macOS target uses the same main app bundle identifier as iPhone and a sandboxed entitlements file for App Store distribution.
 
 ## License
 
