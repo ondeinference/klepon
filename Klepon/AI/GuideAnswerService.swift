@@ -57,7 +57,7 @@ final class GuideAnswerService {
         let previousContext = previousConversationContext(from: previousCards)
 
         return """
-            You are answering inside Klepon, a private iPhone guide to Indonesian food.
+            You are answering inside Klepon, a private local guide to Indonesian food.
             Use only the guide notes below.
             If the notes are not enough, say the guide does not have enough detail yet.
             Keep the tone warm, respectful, and concise.

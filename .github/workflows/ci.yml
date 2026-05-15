@@ -33,3 +33,28 @@ jobs:
             -destination 'platform=iOS Simulator,OS=26.2,name=iPhone 17' \
             -only-testing:KleponSnapshotTests \
             CODE_SIGNING_ALLOWED=NO
+
+  macos-build:
+    name: macOS app build
+    runs-on: macos-26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Resolve Swift packages
+        run: xcodebuild -project Klepon.xcodeproj -scheme 'Klepon Mac' -resolvePackageDependencies
+
+      - name: Build macOS app
+        run: |
+          xcodebuild build \
+            -project Klepon.xcodeproj \
+            -scheme 'Klepon Mac' \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO

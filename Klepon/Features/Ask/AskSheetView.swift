@@ -158,9 +158,9 @@ struct AskSheetView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Ask privately")
-        .navigationBarTitleDisplayMode(.inline)
+        .kleponInlineNavigationTitle()
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .kleponPrimaryAction) {
                 Button("Done") {
                     dismiss()
                 }
@@ -212,7 +212,7 @@ private struct AnswerCardView: View {
                     Spacer(minLength: 12)
 
                     if card.isGeneratedOnDevice {
-                        KleponChip(title: "On this iPhone", icon: "lock")
+                        KleponChip(title: "On this device", icon: "lock")
                     } else {
                         KleponChip(title: "Curated fallback", icon: "book")
                     }

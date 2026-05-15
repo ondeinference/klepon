@@ -90,9 +90,9 @@ struct GuideDetailView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle(entry.title)
-        .navigationBarTitleDisplayMode(.inline)
+        .kleponInlineNavigationTitle()
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .kleponPrimaryAction) {
                 Button {
                     favoritesStore.toggle(entry.id)
                 } label: {
