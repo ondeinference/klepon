@@ -10,7 +10,7 @@ options:
 packages:
   Onde:
     url: https://github.com/ondeinference/onde-swift
-    exactVersion: 1.0.0
+    exactVersion: 1.1.0
 
 schemes:
   Klepon:

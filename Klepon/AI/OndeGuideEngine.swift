@@ -96,15 +96,27 @@ final class OndeGuideEngine: ObservableObject {
     @Published private(set) var storageUsedDescription: String =
         OndeEnvironmentBootstrap.storageUsageDescription()
 
-    private let engine = OndeChatEngine()
+    // Lazy so the Rust/UniFFI runtime is not initialized during app-state
+    // construction before the app actually needs the private guide engine.
+    private var engine: OndeChatEngine?
 
     var estimatedDownloadDescription: String {
         OndeEnvironmentBootstrap.estimatedDownloadDescription
     }
 
+    private func getOrCreateEngine() -> OndeChatEngine {
+        if let engine {
+            return engine
+        }
+
+        let newEngine = OndeChatEngine()
+        engine = newEngine
+        return newEngine
+    }
+
     func prepareIfNeeded(forceReload: Bool = false) async {
         if forceReload {
-            _ = await engine.unloadModel()
+            _ = await engine?.unloadModel()
             availability = .notInstalled
         }
 
@@ -117,6 +129,8 @@ final class OndeGuideEngine: ObservableObject {
 
         availability = .preparing
         OndeEnvironmentBootstrap.configureIfNeeded()
+
+        let engine = getOrCreateEngine()
 
         do {
             _ = try await engine.loadGgufModel(
@@ -140,6 +154,8 @@ final class OndeGuideEngine: ObservableObject {
             throw OndeGuideError.unavailable
         }
 
+        let engine = getOrCreateEngine()
+
         availability = .answering
         _ = await engine.clearHistory()
 
@@ -155,7 +171,8 @@ final class OndeGuideEngine: ObservableObject {
     }
 
     func removePrivateGuide() async {
-        _ = await engine.unloadModel()
+        _ = await engine?.unloadModel()
+        engine = nil
         OndeEnvironmentBootstrap.clearPrivateGuideFiles()
         availability = .notInstalled
         refreshStorageUsage()
