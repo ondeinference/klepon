@@ -13,7 +13,8 @@ struct KleponApp: App {
                 .environmentObject(appState.recentlyViewedStore)
                 .environmentObject(appState.guideEngine)
                 #if os(iOS)
-                    .preferredColorScheme(.light)
+                    .preferredColorScheme(
+                        UIDevice.current.userInterfaceIdiom == .pad ? nil : .light)
                 #endif
         }
         #if os(macOS) || os(visionOS)

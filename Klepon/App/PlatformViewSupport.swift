@@ -14,6 +14,15 @@ extension ToolbarItemPlacement {
 
 extension View {
     @ViewBuilder
+    func kleponReadableContentWidth() -> some View {
+        #if os(iOS)
+            self.frame(maxWidth: 720)
+        #else
+            self
+        #endif
+    }
+
+    @ViewBuilder
     func kleponInteractiveButtonStyle() -> some View {
         #if os(tvOS) || os(visionOS)
             self.buttonStyle(.automatic)
@@ -47,6 +56,14 @@ extension View {
     ) -> some View {
         #if os(macOS) || os(tvOS) || os(visionOS)
             self.sheet(isPresented: isPresented, content: content)
+        #elseif os(iOS)
+            // iPad uses a sheet so the sidebar remains visible behind the cover;
+            // iPhone uses fullScreenCover for the immersive first-launch feel.
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                self.sheet(isPresented: isPresented, content: content)
+            } else {
+                self.fullScreenCover(isPresented: isPresented, content: content)
+            }
         #else
             self.fullScreenCover(isPresented: isPresented, content: content)
         #endif
