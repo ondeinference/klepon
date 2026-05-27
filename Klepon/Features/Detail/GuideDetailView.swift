@@ -8,6 +8,7 @@ struct GuideDetailView: View {
     @EnvironmentObject private var recentlyViewedStore: RecentlyViewedStore
 
     @State private var showingAskSheet = false
+    @State private var showingUnsupportedAlert = false
     @State private var initialQuestion: String?
 
     private var relatedEntries: [GuideEntry] {
@@ -18,7 +19,9 @@ struct GuideDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 headerCard
+                    .tvOSFocusable()
                 richTextSection(title: "What it is", text: entry.story)
+                    .tvOSFocusable()
 
                 if !entry.tasteNotes.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
@@ -26,6 +29,7 @@ struct GuideDetailView: View {
 
                         FlexibleTagLayout(items: entry.tasteNotes)
                     }
+                    .tvOSFocusable()
                 }
 
                 if !entry.highlights.isEmpty {
@@ -43,10 +47,12 @@ struct GuideDetailView: View {
                             }
                         }
                     }
+                    .tvOSFocusable()
                 }
 
                 if let region = entry.region {
                     richTextSection(title: "Region or context", text: region)
+                        .tvOSFocusable()
                 }
 
                 askSection
@@ -106,9 +112,31 @@ struct GuideDetailView: View {
                 AskSheetView(entry: entry, initialQuestion: initialQuestion)
             }
         }
+        .alert(
+            "Not available on this device",
+            isPresented: $showingUnsupportedAlert
+        ) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(
+                "The private guide requires Apple TV 4K 3rd generation (2022) or newer. "
+                    + "Older models don't have the hardware needed to run on-device inference."
+            )
+        }
         .onAppear {
             recentlyViewedStore.record(entry.id)
         }
+    }
+
+    private func openAskSheet(question: String? = nil) {
+        #if os(tvOS)
+            if !kleponDeviceSupportsInference() {
+                showingUnsupportedAlert = true
+                return
+            }
+        #endif
+        initialQuestion = question
+        showingAskSheet = true
     }
 
     private var headerCard: some View {
@@ -170,8 +198,7 @@ struct GuideDetailView: View {
                             ForEach(Array(entry.suggestedQuestions.prefix(3)), id: \.self) {
                                 question in
                                 Button {
-                                    initialQuestion = question
-                                    showingAskSheet = true
+                                    openAskSheet(question: question)
                                 } label: {
                                     Text(question)
                                         .font(KleponTypography.bodySecondary)
@@ -191,8 +218,7 @@ struct GuideDetailView: View {
                 }
 
                 KleponActionButton(title: "Ask privately", systemImage: "lock") {
-                    initialQuestion = nil
-                    showingAskSheet = true
+                    openAskSheet()
                 }
             }
         }

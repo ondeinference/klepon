@@ -19,6 +19,11 @@ struct SearchView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
+                #if os(tvOS)
+                    TVPageHeader("Search")
+                    tvSearchField
+                #endif
+
                 if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     if !recentSearchStore.queries.isEmpty {
                         VStack(alignment: .leading, spacing: 12) {
@@ -103,11 +108,57 @@ struct SearchView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Search")
-        .searchable(text: $query, prompt: "Try rendang, sambal, or klepon")
-        .onSubmit(of: .search) {
-            appState.recentSearchStore.record(query)
-        }
+        #if os(tvOS)
+            .toolbar(.hidden, for: .navigationBar)
+        #else
+            .searchable(text: $query, prompt: "Try rendang, sambal, or klepon")
+            .onSubmit(of: .search) {
+                appState.recentSearchStore.record(query)
+            }
+        #endif
     }
+
+    #if os(tvOS)
+        private var tvSearchField: some View {
+            KleponCard(padding: 18) {
+                HStack(spacing: 12) {
+                    Image(systemName: "magnifyingglass")
+                        .font(.title3)
+                        .foregroundStyle(KleponColor.accentWarm)
+
+                    TextField("Try rendang, sambal, or klepon", text: $query)
+                        .font(KleponTypography.body)
+                        .foregroundColor(KleponColor.textPrimary)
+                        .textFieldStyle(.plain)
+                        .submitLabel(.search)
+                        .onSubmit {
+                            appState.recentSearchStore.record(query)
+                        }
+
+                    if !query.isEmpty {
+                        Button {
+                            query = ""
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.title3)
+                                .foregroundStyle(KleponColor.textSecondary)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 14)
+                .background(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(KleponColor.surface)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(KleponColor.divider, lineWidth: 1)
+                )
+            }
+        }
+    #endif
 }
 
 private struct SearchResultCard: View {

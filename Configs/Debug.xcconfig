@@ -1,0 +1,16 @@
+// Debug build settings.
+//
+// ONDE_WEB_DEV_HOST defaults to localhost, which works for the iOS Simulator.
+//
+// For a real device on your local network, create Configs/Debug.local.xcconfig
+// (git-ignored) and set your Mac's LAN IP there:
+//
+//   ONDE_WEB_DEV_HOST = 192.168.x.x
+//
+// Run `ipconfig getifaddr en0` in Terminal to find your IP.
+
+#include? "Debug.local.xcconfig"
+#include "Signing.xcconfig"
+
+ONDE_WEB_DEV_HOST = $(ONDE_WEB_DEV_HOST:default=localhost)
+ONDE_WEB_DEV_PORT = $(ONDE_WEB_DEV_PORT:default=3000)

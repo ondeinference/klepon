@@ -2,6 +2,10 @@ import Combine
 import Foundation
 import Onde
 
+#if os(tvOS)
+    import Darwin
+#endif
+
 enum PrivateGuideAvailability: Equatable {
     case notInstalled
     case downloaded
@@ -9,6 +13,7 @@ enum PrivateGuideAvailability: Equatable {
     case ready
     case answering
     case failed(String)
+    case unsupported(String)
 
     var title: String {
         switch self {
@@ -24,6 +29,8 @@ enum PrivateGuideAvailability: Equatable {
             return "Answering privately"
         case .failed:
             return "Private guide needs attention"
+        case .unsupported:
+            return "Private guide not available on this device"
         }
     }
 
@@ -46,6 +53,8 @@ enum PrivateGuideAvailability: Equatable {
                 "Klepon is grounding your question against the local guide and composing a concise answer."
         case .failed(let message):
             return message
+        case .unsupported(let reason):
+            return reason
         }
     }
 
@@ -57,6 +66,8 @@ enum PrivateGuideAvailability: Equatable {
             return "Try again"
         case .downloaded:
             return "Finish preparing private guide"
+        case .unsupported:
+            return "Not available"
         default:
             return "Prepare private guide"
         }
@@ -77,6 +88,13 @@ enum PrivateGuideAvailability: Equatable {
         }
         return false
     }
+
+    var isUnsupported: Bool {
+        if case .unsupported = self {
+            return true
+        }
+        return false
+    }
 }
 
 enum OndeGuideError: LocalizedError {
@@ -89,6 +107,27 @@ enum OndeGuideError: LocalizedError {
         }
     }
 }
+
+#if os(tvOS)
+    /// Check if this Apple TV has the Metal capabilities needed for on-device inference.
+    /// AppleTV14,1 (Apple TV 4K 3rd gen, A15) is the minimum. Older chips (A10X, A12)
+    /// lack simdgroup_matrix support and crash at shader compilation.
+    func kleponDeviceSupportsInference() -> Bool {
+        var size = 0
+        sysctlbyname("hw.machine", nil, &size, nil, 0)
+        var machine = [CChar](repeating: 0, count: size)
+        sysctlbyname("hw.machine", &machine, &size, nil, 0)
+        let identifier = String(cString: machine)
+
+        guard identifier.hasPrefix("AppleTV") else { return false }
+        let numericPart = identifier.dropFirst("AppleTV".count)
+        guard let commaIndex = numericPart.firstIndex(of: ",") else { return false }
+        guard let generation = Int(numericPart[numericPart.startIndex..<commaIndex]) else {
+            return false
+        }
+        return generation >= 14
+    }
+#endif
 
 @MainActor
 final class OndeGuideEngine: ObservableObject {
@@ -121,11 +160,21 @@ final class OndeGuideEngine: ObservableObject {
         }
 
         switch availability {
-        case .ready, .preparing, .answering:
+        case .ready, .preparing, .answering, .unsupported:
             return
         case .notInstalled, .downloaded, .failed:
             break
         }
+
+        #if os(tvOS)
+            if !kleponDeviceSupportsInference() {
+                availability = .unsupported(
+                    "The private guide requires Apple TV 4K 3rd generation (2022) or newer. "
+                        + "Older models don't have the hardware needed to run on-device inference."
+                )
+                return
+            }
+        #endif
 
         availability = .preparing
         OndeEnvironmentBootstrap.configureIfNeeded()
@@ -133,8 +182,21 @@ final class OndeGuideEngine: ObservableObject {
         let engine = getOrCreateEngine()
 
         do {
-            _ = try await engine.loadGgufModel(
-                config: qwen2515bConfig(),
+            guard
+                let appId = Bundle.main.object(forInfoDictionaryKey: "OndeAppId") as? String,
+                let appSecret = Bundle.main.object(forInfoDictionaryKey: "OndeAppSecret")
+                    as? String,
+                !appId.isEmpty,
+                !appSecret.isEmpty
+            else {
+                availability = .failed(
+                    "Onde credentials not configured. See Configs/Secrets.xcconfig.")
+                return
+            }
+
+            _ = try await engine.loadAssignedModel(
+                appId: appId,
+                appSecret: appSecret,
                 systemPrompt:
                     "You are Klepon, a warm and careful guide to Indonesian food. Stay grounded in the notes you are given, keep answers short, and say clearly when the guide does not have enough detail.",
                 sampling: nil

@@ -13,7 +13,7 @@ options:
 packages:
   Onde:
     url: https://github.com/ondeinference/onde-swift
-    exactVersion: 1.1.0
+    exactVersion: 1.1.2
   SnapshotTesting:
     url: https://github.com/pointfreeco/swift-snapshot-testing
     from: 1.19.2
@@ -100,6 +100,10 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
+        OndeWebDevHost: $(ONDE_WEB_DEV_HOST)
+        OndeWebDevPort: $(ONDE_WEB_DEV_PORT)
+        OndeAppId: $(ONDE_APP_ID)
+        OndeAppSecret: $(ONDE_APP_SECRET)
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
@@ -121,8 +125,8 @@ targets:
         com.apple.security.application-groups:
           - group.com.ondeinference.apps
     configFiles:
-      Debug: Configs/Signing.xcconfig
-      Release: Configs/Signing.xcconfig
+      Debug: Configs/Debug.xcconfig
+      Release: Configs/Release.xcconfig
     dependencies:
       - package: Onde
         product: Onde
@@ -187,11 +191,14 @@ targets:
         CURRENT_PROJECT_VERSION: 1
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        DEAD_CODE_STRIPPING: YES
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         TARGETED_DEVICE_FAMILY: "1,2"
         "EXCLUDED_ARCHS[sdk=iphonesimulator*]": x86_64
       configs:
         Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon-Debug
+          PRODUCT_NAME: Klepon Debug
           SWIFT_OPTIMIZATION_LEVEL: -Onone
         Release:
           SWIFT_OPTIMIZATION_LEVEL: -O
@@ -235,6 +242,8 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
         LSApplicationCategoryType: public.app-category.food-and-drink
+        OndeAppId: $(ONDE_APP_ID)
+        OndeAppSecret: $(ONDE_APP_SECRET)
     entitlements:
       path: KleponMac/KleponMac.entitlements
       properties:
@@ -308,6 +317,7 @@ targets:
         PRODUCT_NAME: Klepon
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: 1
+        DEAD_CODE_STRIPPING: YES
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIconMac
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
@@ -315,6 +325,8 @@ targets:
         "EXCLUDED_ARCHS[sdk=macosx*]": x86_64
       configs:
         Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon-Debug
+          PRODUCT_NAME: Klepon Debug
           SWIFT_OPTIMIZATION_LEVEL: -Onone
         Release:
           SWIFT_OPTIMIZATION_LEVEL: -O
@@ -328,6 +340,9 @@ targets:
         excludes:
           - Info.plist
           - Klepon.entitlements
+          - App/KleponApp.swift
+          - App/AppRootView.swift
+      - path: KleponTV/App
     info:
       path: KleponTV/Info.plist
       properties:
@@ -335,9 +350,22 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}
+        OndeAppId: $(ONDE_APP_ID)
+        OndeAppSecret: $(ONDE_APP_SECRET)
+        CFBundleURLTypes:
+          - CFBundleURLName: ai.splitfire.klepon.tvos
+            CFBundleURLSchemes:
+              - klepon
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
     entitlements:
       path: KleponTV/KleponTV.entitlements
       properties:
+        com.apple.developer.kernel.increased-memory-limit: true
         com.apple.security.application-groups:
           - group.com.ondeinference.apps
     configFiles:
@@ -346,6 +374,8 @@ targets:
     dependencies:
       - package: Onde
         product: Onde
+      - target: Klepon TV Top Shelf
+        embed: true
     postBuildScripts:
       - name: Update CFBundleVersion
         shell: /bin/sh
@@ -387,6 +417,74 @@ targets:
         "EXCLUDED_ARCHS[sdk=appletvsimulator*]": x86_64
       configs:
         Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon-Debug
+          PRODUCT_NAME: Klepon Debug
+          SWIFT_OPTIMIZATION_LEVEL: -Onone
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: -O
+
+  KleponTVTopShelfExtension:
+    name: Klepon TV Top Shelf
+    type: app-extension
+    platform: tvOS
+    sources:
+      - path: KleponTVTopShelfExtension
+        excludes:
+          - Info.plist
+    info:
+      path: KleponTVTopShelfExtension/Info.plist
+      properties:
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDisplayName: Klepon TV Top Shelf
+        UIRequiredDeviceCapabilities:
+          - arm64
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.tv-top-shelf
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ContentProvider
+    configFiles:
+      Debug: Configs/Signing.xcconfig
+      Release: Configs/Signing.xcconfig
+    postBuildScripts:
+      - name: Update CFBundleVersion
+        shell: /bin/sh
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+        script: |
+          set -eu
+
+          SHARED_BUNDLE_VERSION_FILE="${BUILD_DIR}/klepon-cfbundleversion.txt"
+          if [ -f "${SHARED_BUNDLE_VERSION_FILE}" ]; then
+            BUNDLE_VERSION="$(cat "${SHARED_BUNDLE_VERSION_FILE}")"
+          else
+            BUNDLE_VERSION="$(date -u +"%Y%m%d.%H%M")"
+            printf '%s' "${BUNDLE_VERSION}" > "${SHARED_BUNDLE_VERSION_FILE}"
+          fi
+
+          INFO_PLIST="${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+
+          if [ ! -f "${INFO_PLIST}" ]; then
+            echo "error: Info.plist not found at ${INFO_PLIST}"
+            exit 1
+          fi
+
+          if ! /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUNDLE_VERSION}" "${INFO_PLIST}" >/dev/null 2>&1; then
+            /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string ${BUNDLE_VERSION}" "${INFO_PLIST}"
+          fi
+
+          echo "Updated CFBundleVersion to ${BUNDLE_VERSION}"
+    settings:
+      base:
+        APPLICATION_EXTENSION_API_ONLY: YES
+        PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.topshelf
+        PRODUCT_NAME: Klepon TV Top Shelf
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        TARGETED_DEVICE_FAMILY: 3
+      configs:
+        Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon-Debug.topshelf
           SWIFT_OPTIMIZATION_LEVEL: -Onone
         Release:
           SWIFT_OPTIMIZATION_LEVEL: -O
@@ -407,6 +505,8 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}
+        OndeAppId: $(ONDE_APP_ID)
+        OndeAppSecret: $(ONDE_APP_SECRET)
     entitlements:
       path: KleponVision/KleponVision.entitlements
       properties:
@@ -459,6 +559,8 @@ targets:
         "EXCLUDED_ARCHS[sdk=xrsimulator*]": x86_64
       configs:
         Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon-Debug
+          PRODUCT_NAME: Klepon Debug
           SWIFT_OPTIMIZATION_LEVEL: -Onone
         Release:
           SWIFT_OPTIMIZATION_LEVEL: -O
@@ -507,6 +609,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.watchkitapp
+        KLEPON_COMPANION_BUNDLE_ID: ai.splitfire.klepon
         PRODUCT_NAME: Klepon Watch
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: 1
@@ -525,6 +628,8 @@ targets:
         "EXCLUDED_ARCHS[sdk=watchsimulator*]": x86_64
       configs:
         Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon-Debug.watchkitapp
+          KLEPON_COMPANION_BUNDLE_ID: ai.splitfire.klepon-Debug
           SWIFT_OPTIMIZATION_LEVEL: -Onone
         Release:
           SWIFT_OPTIMIZATION_LEVEL: -O

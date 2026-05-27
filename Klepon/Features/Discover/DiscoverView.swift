@@ -7,6 +7,10 @@ struct DiscoverView: View {
 
     @Binding var showingSettings: Bool
 
+    #if os(iOS)
+        @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    #endif
+
     private var featuredEntry: GuideEntry? {
         let featuredEntries = appState.contentRepository.featuredEntries
         guard !featuredEntries.isEmpty else { return nil }
@@ -26,9 +30,21 @@ struct DiscoverView: View {
         recentlyViewedStore.entryIDs.compactMap { appState.contentRepository.entry(id: $0) }
     }
 
+    private var showsSettingsButton: Bool {
+        #if os(iOS)
+            return horizontalSizeClass != .regular
+        #else
+            return true
+        #endif
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
+                #if os(tvOS)
+                    TVPageHeader("Klepon")
+                #endif
+
                 introSection
 
                 if let featuredEntry {
@@ -104,16 +120,22 @@ struct DiscoverView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Klepon")
-        .kleponLargeNavigationTitle()
+        #if os(tvOS)
+            .toolbar(.hidden, for: .navigationBar)
+        #else
+            .kleponLargeNavigationTitle()
+        #endif
         #if !os(tvOS)
             .toolbar {
-                ToolbarItem(placement: .kleponPrimaryAction) {
-                    Button {
-                        showingSettings = true
-                    } label: {
-                        Image(systemName: "gearshape.2")
+                if showsSettingsButton {
+                    ToolbarItem(placement: .kleponPrimaryAction) {
+                        Button {
+                            showingSettings = true
+                        } label: {
+                            Image(systemName: "gearshape.2")
+                        }
+                        .tint(KleponColor.accent)
                     }
-                    .tint(KleponColor.accent)
                 }
             }
         #endif

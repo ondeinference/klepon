@@ -49,6 +49,18 @@ extension View {
         #endif
     }
 
+    /// Make non-interactive content focusable on tvOS so the focus engine
+    /// can navigate through it and drive ScrollView scrolling.
+    /// No-op on all other platforms.
+    @ViewBuilder
+    func tvOSFocusable() -> some View {
+        #if os(tvOS)
+            self.focusable()
+        #else
+            self
+        #endif
+    }
+
     @ViewBuilder
     func kleponOnboardingPresentation<Content: View>(
         isPresented: Binding<Bool>,

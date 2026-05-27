@@ -11,6 +11,10 @@ struct SavedView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
+                #if os(tvOS)
+                    TVPageHeader("Saved")
+                #endif
+
                 if savedEntries.isEmpty {
                     EmptyStateView(
                         title: "Save dishes you want to revisit",
@@ -61,5 +65,8 @@ struct SavedView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Saved")
+        #if os(tvOS)
+            .toolbar(.hidden, for: .navigationBar)
+        #endif
     }
 }

@@ -88,6 +88,7 @@ struct AppRootView: View {
         .task {
             showingOnboarding = !appState.hasCompletedOnboarding
             appState.guideEngine.refreshStorageUsage()
+            await appState.accountStore.restoreSessionIfNeeded()
         }
         .onChange(of: appState.hasCompletedOnboarding) { _, newValue in
             showingOnboarding = !newValue
@@ -122,6 +123,7 @@ struct AppRootView: View {
             .task {
                 showingOnboarding = !appState.hasCompletedOnboarding
                 appState.guideEngine.refreshStorageUsage()
+                await appState.accountStore.restoreSessionIfNeeded()
             }
             .onChange(of: appState.hasCompletedOnboarding) { _, newValue in
                 showingOnboarding = !newValue

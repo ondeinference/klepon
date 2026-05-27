@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "676CA86C78E7DB801DEEAF12"
-               BuildableName = "Klepon.app"
+               BuildableName = "Klepon Debug.app"
                BlueprintName = "Klepon Mac"
                ReferencedContainer = "container:Klepon.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "676CA86C78E7DB801DEEAF12"
-            BuildableName = "Klepon.app"
+            BuildableName = "Klepon Debug.app"
             BlueprintName = "Klepon Mac"
             ReferencedContainer = "container:Klepon.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "676CA86C78E7DB801DEEAF12"
-            BuildableName = "Klepon.app"
+            BuildableName = "Klepon Debug.app"
             BlueprintName = "Klepon Mac"
             ReferencedContainer = "container:Klepon.xcodeproj">
          </BuildableReference>
@@ -71,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "676CA86C78E7DB801DEEAF12"
-            BuildableName = "Klepon.app"
+            BuildableName = "Klepon Debug.app"
             BlueprintName = "Klepon Mac"
             ReferencedContainer = "container:Klepon.xcodeproj">
          </BuildableReference>

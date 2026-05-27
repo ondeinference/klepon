@@ -14,6 +14,8 @@ struct OnboardingView: View {
             return "Finish preparing private guide"
         case .failed:
             return "Try private guide again"
+        case .unsupported:
+            return "Not available on this device"
         default:
             return "Add private guide"
         }

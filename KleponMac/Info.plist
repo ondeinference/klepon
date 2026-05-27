@@ -21,6 +21,10 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false />
+	<key>OndeAppId</key>
+	<string>$(ONDE_APP_ID)</string>
+	<key>OndeAppSecret</key>
+	<string>$(ONDE_APP_SECRET)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.food-and-drink</string>
 </dict>
