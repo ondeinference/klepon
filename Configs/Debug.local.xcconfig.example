@@ -1,0 +1,8 @@
+// Copy this file to Configs/Debug.local.xcconfig (git-ignored).
+// Set your Mac's LAN IP so a real device can reach the local onde-web server.
+//
+// Find your IP: run `ipconfig getifaddr en0` in Terminal.
+// Start onde-web with: pnpm dev -- --hostname 0.0.0.0
+
+ONDE_WEB_DEV_HOST = 192.168.x.x
+// ONDE_WEB_DEV_PORT = 3000

@@ -2,9 +2,9 @@ import Foundation
 
 final class GuideAnswerService {
     private let repository: ContentRepository
-    private let guideEngine: OndeGuideEngine
+    private let guideEngine: GuideAnswering
 
-    init(repository: ContentRepository, guideEngine: OndeGuideEngine) {
+    init(repository: ContentRepository, guideEngine: GuideAnswering) {
         self.repository = repository
         self.guideEngine = guideEngine
     }

@@ -10,3 +10,5 @@
 #include? "Signing.local.xcconfig"
 
 CODE_SIGN_STYLE = Automatic
+
+#include "Secrets.xcconfig"

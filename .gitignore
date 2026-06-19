@@ -58,6 +58,7 @@ venv/
 *.local
 *.xcconfig.local
 Configs/Signing.local.xcconfig
+Configs/Secrets.local.xcconfig
 *.secret
 Secrets/
 secrets/

@@ -24,3 +24,20 @@ struct SectionHeader: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
+
+struct TVPageHeader: View {
+    let title: String
+
+    init(_ title: String) {
+        self.title = title
+    }
+
+    var body: some View {
+        Text(title)
+            .font(KleponTypography.screenTitle)
+            .foregroundStyle(KleponColor.textPrimary)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.top, 4)
+            .padding(.bottom, 8)
+    }
+}
