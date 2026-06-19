@@ -108,6 +108,14 @@ enum OndeGuideError: LocalizedError {
     }
 }
 
+/// Abstraction over the on-device guide engine. Depending on this protocol
+/// instead of the concrete `OndeGuideEngine` lets higher-level services such as
+/// `GuideAnswerService` be unit-tested with a fake, without spinning up the
+/// Rust/UniFFI inference runtime.
+protocol GuideAnswering: AnyObject {
+    func answer(prompt: String) async throws -> String
+}
+
 #if os(tvOS)
     /// Check if this Apple TV has the Metal capabilities needed for on-device inference.
     /// AppleTV14,1 (Apple TV 4K 3rd gen, A15) is the minimum. Older chips (A10X, A12)
@@ -130,7 +138,7 @@ enum OndeGuideError: LocalizedError {
 #endif
 
 @MainActor
-final class OndeGuideEngine: ObservableObject {
+final class OndeGuideEngine: ObservableObject, GuideAnswering {
     @Published private(set) var availability: PrivateGuideAvailability = .notInstalled
     @Published private(set) var storageUsedDescription: String =
         OndeEnvironmentBootstrap.storageUsageDescription()
