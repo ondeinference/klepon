@@ -24,6 +24,6 @@
 	<key>WKApplication</key>
 	<true />
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>ai.splitfire.klepon</string>
+	<string>$(KLEPON_COMPANION_BUNDLE_ID)</string>
 </dict>
 </plist>

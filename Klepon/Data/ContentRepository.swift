@@ -6,9 +6,18 @@ final class ContentRepository {
 
     private let entriesByID: [String: GuideEntry]
 
-    init(bundle: Bundle = .main) {
-        self.entries = ContentRepository.loadEntries(from: bundle)
-        self.collections = ContentRepository.loadCollections(from: bundle)
+    convenience init(bundle: Bundle = .main) {
+        self.init(
+            entries: ContentRepository.loadEntries(from: bundle),
+            collections: ContentRepository.loadCollections(from: bundle)
+        )
+    }
+
+    /// Creates a repository from in-memory content. Useful for tests and previews
+    /// that need deterministic fixtures without loading bundled JSON.
+    init(entries: [GuideEntry], collections: [GuideCollection]) {
+        self.entries = entries
+        self.collections = collections
         self.entriesByID = Dictionary(uniqueKeysWithValues: entries.map { ($0.id, $0) })
     }
 

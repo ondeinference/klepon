@@ -16,6 +16,7 @@ final class AppState: ObservableObject {
     let recentlyViewedStore: RecentlyViewedStore
     let guideEngine: OndeGuideEngine
     let answerService: GuideAnswerService
+    let accountStore: AccountStore
 
     init() {
         OndeEnvironmentBootstrap.configureIfNeeded()
@@ -25,6 +26,7 @@ final class AppState: ObservableObject {
         let recentSearchStore = RecentSearchStore()
         let recentlyViewedStore = RecentlyViewedStore()
         let guideEngine = OndeGuideEngine()
+        let accountStore = AccountStore()
 
         self.contentRepository = repository
         self.searchService = SearchService(repository: repository)
@@ -33,6 +35,7 @@ final class AppState: ObservableObject {
         self.recentlyViewedStore = recentlyViewedStore
         self.guideEngine = guideEngine
         self.answerService = GuideAnswerService(repository: repository, guideEngine: guideEngine)
+        self.accountStore = accountStore
         guideEngine.refreshStorageUsage()
         self.hasCompletedOnboarding = UserDefaults.standard.bool(
             forKey: Keys.hasCompletedOnboarding)

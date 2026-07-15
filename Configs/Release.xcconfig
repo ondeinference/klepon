@@ -1,0 +1,4 @@
+// Release build settings.
+// Dev host vars are intentionally absent — production URL is used exclusively.
+
+#include "Signing.xcconfig"

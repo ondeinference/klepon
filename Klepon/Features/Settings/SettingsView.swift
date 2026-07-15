@@ -6,6 +6,7 @@ struct SettingsView: View {
     @EnvironmentObject private var favoritesStore: FavoritesStore
     @EnvironmentObject private var recentSearchStore: RecentSearchStore
     @EnvironmentObject private var guideEngine: OndeGuideEngine
+    @EnvironmentObject private var accountStore: AccountStore
 
     private var versionString: String {
         let version =
@@ -18,6 +19,29 @@ struct SettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
+                #if os(tvOS)
+                    TVPageHeader("Settings")
+                #endif
+
+                #if os(macOS)
+                    HStack {
+                        Spacer()
+
+                        Button("Close") {
+                            dismiss()
+                        }
+                        .font(KleponTypography.bodySecondary.weight(.semibold))
+                        .foregroundStyle(KleponColor.accent)
+                        .keyboardShortcut(.cancelAction)
+                    }
+                #endif
+
+                #if DEBUG
+                    DebugSettingsCard()
+                #endif
+
+                AccountSettingsCard()
+
                 KleponCard {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Private guide")
@@ -170,6 +194,9 @@ struct SettingsView: View {
         }
         .background(KleponColor.background.ignoresSafeArea())
         .navigationTitle("Settings")
+        #if os(tvOS)
+            .toolbar(.hidden, for: .navigationBar)
+        #endif
         #if !os(tvOS)
             .toolbar {
                 ToolbarItem(placement: .kleponPrimaryAction) {
