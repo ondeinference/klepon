@@ -11,9 +11,9 @@ options:
   createIntermediateGroups: false
 
 packages:
-  Onde:
-    url: https://github.com/ondeinference/onde-swift
-    exactVersion: 1.1.2
+  Ed:
+    url: https://github.com/ondeinference/ed-swift
+    exactVersion: 1.0.2
   SnapshotTesting:
     url: https://github.com/pointfreeco/swift-snapshot-testing
     from: 1.19.2
@@ -128,11 +128,11 @@ targets:
       Debug: Configs/Debug.xcconfig
       Release: Configs/Release.xcconfig
     dependencies:
-      - package: Onde
-        product: Onde
+      - package: Ed
+        product: Ed
       - target: Klepon Watch
     preBuildScripts:
-      - name: Inject PrivacyInfo into OndeFramework
+      - name: Inject PrivacyInfo into EdFramework
         shell: /bin/sh
         basedOnDependencyAnalysis: false
         showEnvVars: false
@@ -143,10 +143,10 @@ targets:
           # for manifests inside nested third-party framework bundles.
           # BUILD_DIR is .../DerivedData/<name>/Build/Intermediates.noindex
           # SourcePackages is always two levels up from BUILD_DIR.
-          XCFW="${BUILD_DIR}/../../SourcePackages/artifacts/onde-swift/OndeFramework/OndeFramework.xcframework"
+          XCFW="${BUILD_DIR}/../../SourcePackages/artifacts/ed-swift/EdFramework/EdFramework.xcframework"
           PRIVACY_SRC="${SRCROOT}/Scripts/OndePrivacyInfo.xcprivacy"
           if [ ! -d "${XCFW}" ]; then
-            echo "warning: OndeFramework.xcframework not found at ${XCFW} — skipping PrivacyInfo injection"
+            echo "warning: EdFramework.xcframework not found at ${XCFW} — skipping PrivacyInfo injection"
             exit 0
           fi
           for SLICE in "${XCFW}"/*/; do
@@ -187,6 +187,9 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
+        # Keep the module name stable across configurations so the tests can
+        # `@testable import Klepon` even though the Debug product is "Klepon Debug".
+        PRODUCT_MODULE_NAME: Klepon
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: 1
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -223,6 +226,9 @@ targets:
       configs:
         Debug:
           SWIFT_OPTIMIZATION_LEVEL: -Onone
+          # The Debug host app is named "Klepon Debug", not the target name
+          # XcodeGen assumes when it derives TEST_HOST.
+          TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Klepon Debug.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Klepon Debug"
         Release:
           SWIFT_OPTIMIZATION_LEVEL: -O
 
@@ -256,24 +262,24 @@ targets:
       Debug: Configs/Signing.xcconfig
       Release: Configs/Signing.xcconfig
     dependencies:
-      - package: Onde
-        product: Onde
+      - package: Ed
+        product: Ed
       # SystemConfiguration is a genuine transitive dependency of the Onde Rust
       # static library (reqwest → native-tls → SCDynamicStore / SCNetworkInterface).
       # It is required by the macOS linker to resolve symbols in libonde-macos.a
       # and is NOT present in the iOS/tvOS/watchOS slices.
       - sdk: SystemConfiguration.framework
     preBuildScripts:
-      - name: Inject PrivacyInfo into OndeFramework
+      - name: Inject PrivacyInfo into EdFramework
         shell: /bin/sh
         basedOnDependencyAnalysis: false
         showEnvVars: false
         script: |
           set -eu
-          XCFW="${BUILD_DIR}/../../SourcePackages/artifacts/onde-swift/OndeFramework/OndeFramework.xcframework"
+          XCFW="${BUILD_DIR}/../../SourcePackages/artifacts/ed-swift/EdFramework/EdFramework.xcframework"
           PRIVACY_SRC="${SRCROOT}/Scripts/OndePrivacyInfo.xcprivacy"
           if [ ! -d "${XCFW}" ]; then
-            echo "warning: OndeFramework.xcframework not found at ${XCFW} — skipping PrivacyInfo injection"
+            echo "warning: EdFramework.xcframework not found at ${XCFW} — skipping PrivacyInfo injection"
             exit 0
           fi
           for SLICE in "${XCFW}"/*/; do
@@ -372,8 +378,8 @@ targets:
       Debug: Configs/Signing.xcconfig
       Release: Configs/Signing.xcconfig
     dependencies:
-      - package: Onde
-        product: Onde
+      - package: Ed
+        product: Ed
       - target: Klepon TV Top Shelf
         embed: true
     postBuildScripts:
@@ -516,8 +522,8 @@ targets:
       Debug: Configs/Signing.xcconfig
       Release: Configs/Signing.xcconfig
     dependencies:
-      - package: Onde
-        product: Onde
+      - package: Ed
+        product: Ed
     postBuildScripts:
       - name: Update CFBundleVersion
         shell: /bin/sh
