@@ -1554,6 +1554,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
+				PRODUCT_MODULE_NAME = Klepon;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1743,6 +1744,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon-Debug";
+				PRODUCT_MODULE_NAME = Klepon;
 				PRODUCT_NAME = "Klepon Debug";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
