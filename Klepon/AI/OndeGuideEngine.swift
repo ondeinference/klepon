@@ -1,6 +1,6 @@
 import Combine
+import Ed
 import Foundation
-import Onde
 
 #if os(tvOS)
     import Darwin
@@ -145,25 +145,25 @@ final class OndeGuideEngine: ObservableObject, GuideAnswering {
 
     // Lazy so the Rust/UniFFI runtime is not initialized during app-state
     // construction before the app actually needs the private guide engine.
-    private var engine: OndeChatEngine?
+    private var engine: EdAgent?
 
     var estimatedDownloadDescription: String {
         OndeEnvironmentBootstrap.estimatedDownloadDescription
     }
 
-    private func getOrCreateEngine() -> OndeChatEngine {
+    private func getOrCreateEngine() -> EdAgent {
         if let engine {
             return engine
         }
 
-        let newEngine = OndeChatEngine()
+        let newEngine = EdAgent()
         engine = newEngine
         return newEngine
     }
 
     func prepareIfNeeded(forceReload: Bool = false) async {
         if forceReload {
-            _ = await engine?.unloadModel()
+            _ = await engine?.unload()
             availability = .notInstalled
         }
 
@@ -203,11 +203,11 @@ final class OndeGuideEngine: ObservableObject, GuideAnswering {
             }
 
             _ = try await engine.loadAssignedModel(
-                appId: appId,
+                environment: .production,
+                appID: appId,
                 appSecret: appSecret,
                 systemPrompt:
-                    "You are Klepon, a warm and careful guide to Indonesian food. Stay grounded in the notes you are given, keep answers short, and say clearly when the guide does not have enough detail.",
-                sampling: nil
+                    "You are Klepon, a warm and careful guide to Indonesian food. Stay grounded in the notes you are given, keep answers short, and say clearly when the guide does not have enough detail."
             )
             availability = .ready
             refreshStorageUsage()
@@ -230,7 +230,7 @@ final class OndeGuideEngine: ObservableObject, GuideAnswering {
         _ = await engine.clearHistory()
 
         do {
-            let result = try await engine.sendMessage(message: prompt)
+            let result = try await engine.send(prompt)
             availability = .ready
             refreshStorageUsage()
             return result.text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -241,7 +241,7 @@ final class OndeGuideEngine: ObservableObject, GuideAnswering {
     }
 
     func removePrivateGuide() async {
-        _ = await engine?.unloadModel()
+        _ = await engine?.unload()
         engine = nil
         OndeEnvironmentBootstrap.clearPrivateGuideFiles()
         availability = .notInstalled

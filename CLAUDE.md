@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Klepon is a SwiftUI guide to Indonesian dishes, ingredients, and food traditions. It supports iOS, macOS, tvOS, visionOS, and watchOS and uses the [Onde Swift SDK](https://github.com/ondeinference/onde-swift) for private on-device AI answers.
+Klepon is a SwiftUI guide to Indonesian dishes, ingredients, and food traditions. It supports iOS, macOS, tvOS, visionOS, and watchOS and uses the [Ed Swift SDK](https://github.com/ondeinference/ed-swift) (the Onde-powered on-device agent) for private on-device AI answers.
 
 ## Project structure
 
@@ -83,7 +83,7 @@ AppState
 
 ### On-device AI
 
-`OndeGuideEngine` conforms to `GuideAnswering` and lazily initializes `OndeChatEngine` (from the Onde Swift package) only when inference is actually requested. `GuideAnswerService` depends on the `GuideAnswering` protocol, not the concrete engine, so tests can inject `StubGuideEngine` without touching the Rust/UniFFI runtime.
+`OndeGuideEngine` conforms to `GuideAnswering` and lazily initializes `EdAgent` (from the Ed Swift package) only when inference is actually requested. `GuideAnswerService` depends on the `GuideAnswering` protocol, not the concrete engine, so tests can inject `StubGuideEngine` without touching the Rust/UniFFI runtime.
 
 tvOS inference is gated on hardware: Apple TV 4K 3rd generation (AppleTV14,1, A15) or newer — checked via `sysctlbyname("hw.machine", ...)` in `OndeGuideEngine.swift`.
 

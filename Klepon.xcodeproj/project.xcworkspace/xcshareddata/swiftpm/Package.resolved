@@ -1,13 +1,13 @@
 {
-  "originHash" : "d0bdf11c61d97536644353dced450ae7c6ccf1ed85d3c28d0c13998925fa188d",
+  "originHash" : "2a323800d95df61fe62b61c6037aa04c842115a00e78573e2802ba9dd26c95c3",
   "pins" : [
     {
-      "identity" : "onde-swift",
+      "identity" : "ed-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ondeinference/onde-swift",
+      "location" : "https://github.com/ondeinference/ed-swift",
       "state" : {
-        "revision" : "534c412ee719e1a4c7c5f1f8b24c1c4bf5188878",
-        "version" : "1.1.2"
+        "revision" : "62a5426fc3b0a689ee51f8622085b082059cb1bd",
+        "version" : "1.0.2"
       }
     },
     {
