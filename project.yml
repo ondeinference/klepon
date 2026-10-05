@@ -321,7 +321,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
         PRODUCT_NAME: Klepon
-        MARKETING_VERSION: "1.0.0"
+        MARKETING_VERSION: "1.1.0"
         CURRENT_PROJECT_VERSION: 1
         DEAD_CODE_STRIPPING: YES
         ENABLE_USER_SCRIPT_SANDBOXING: NO
@@ -414,7 +414,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
         PRODUCT_NAME: Klepon
-        MARKETING_VERSION: "1.0.0"
+        MARKETING_VERSION: "1.1.0"
         CURRENT_PROJECT_VERSION: 1
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIconTV
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
@@ -484,7 +484,7 @@ targets:
         APPLICATION_EXTENSION_API_ONLY: YES
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.topshelf
         PRODUCT_NAME: Klepon TV Top Shelf
-        MARKETING_VERSION: "1.0.0"
+        MARKETING_VERSION: "1.1.0"
         CURRENT_PROJECT_VERSION: 1
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         TARGETED_DEVICE_FAMILY: 3
@@ -556,7 +556,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon
         PRODUCT_NAME: Klepon
-        MARKETING_VERSION: "1.0.0"
+        MARKETING_VERSION: "1.1.0"
         CURRENT_PROJECT_VERSION: 1
         TARGETED_DEVICE_FAMILY: 7
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIconVision
@@ -617,7 +617,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: ai.splitfire.klepon.watchkitapp
         KLEPON_COMPANION_BUNDLE_ID: ai.splitfire.klepon
         PRODUCT_NAME: Klepon Watch
-        MARKETING_VERSION: "1.0.0"
+        MARKETING_VERSION: "1.1.0"
         CURRENT_PROJECT_VERSION: 1
         GENERATE_INFOPLIST_FILE: NO
         INFOPLIST_FILE: KleponWatch/Info.plist

@@ -1367,7 +1367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon-Debug.watchkitapp";
 				PRODUCT_NAME = "Klepon Watch";
 				SDKROOT = watchos;
@@ -1390,7 +1390,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon.topshelf;
 				PRODUCT_NAME = "Klepon TV Top Shelf";
 				SDKROOT = appletvos;
@@ -1417,7 +1417,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon-Debug";
 				PRODUCT_NAME = "Klepon Debug";
 				SDKROOT = macosx;
@@ -1443,7 +1443,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				PRODUCT_NAME = Klepon;
 				SDKROOT = macosx;
@@ -1526,7 +1526,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon-Debug";
 				PRODUCT_NAME = "Klepon Debug";
 				SDKROOT = appletvos;
@@ -1576,7 +1576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				PRODUCT_NAME = Klepon;
 				SDKROOT = xros;
@@ -1598,7 +1598,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon-Debug.topshelf";
 				PRODUCT_NAME = "Klepon TV Top Shelf";
 				SDKROOT = appletvos;
@@ -1624,7 +1624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon.watchkitapp;
 				PRODUCT_NAME = "Klepon Watch";
 				SDKROOT = watchos;
@@ -1716,7 +1716,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.splitfire.klepon;
 				PRODUCT_NAME = Klepon;
 				SDKROOT = appletvos;
@@ -1767,7 +1767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.splitfire.klepon-Debug";
 				PRODUCT_NAME = "Klepon Debug";
 				SDKROOT = xros;
